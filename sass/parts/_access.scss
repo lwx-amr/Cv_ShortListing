@@ -1,0 +1,153 @@
+/* ------------------------------- Start Access ------------------------------- */
+.access{
+  .page-content{
+    background-color: $alW;
+    min-height: 100vh;
+    .page-head{
+      text-align: center;
+      padding: 40px 0 20px;
+      p{
+        font-size: 20px;
+        color: $dlGray;
+      }
+    }
+    .page-footer{
+      p{
+        color: $mllGray;
+        margin: 0;
+      }
+    }
+  }
+  .access-box{
+    background-color: #fff;
+    @extend %lightShadow;
+    overflow: hidden;
+    border-radius: 12px;
+    margin: auto;
+    .box-head{
+      padding:  30px 0 19px;
+      text-align: center;
+      background-color: $dBlue;
+      img{
+        width: 185px;
+      }
+    }
+    .error-notice{
+      padding: 10px 10px;
+      color: #86181d;
+      background-color: #ffdce0;
+      border:1px solid rgba(27,31,35,.15);
+      border-radius: 4px;
+      display: none;
+      font-size: 12px;
+      &.showen{
+        display: block;
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
+    .link{
+      font-size: 12px;
+      color: $mBlue;
+    }
+  }
+  &.signin{
+    .access-box{
+      width: 320px;
+      text-align: right;
+      margin-bottom: 50px;
+      .box-body{
+        padding: 30px 30px 0 30px;
+        .error-notice{
+          margin-bottom: 20px;
+        }
+        button{
+            width: 100%;
+            text-align: center;
+        }
+        .password{
+          position: relative;
+          label{
+            display: flex;
+            justify-content: space-between;
+            direction: rtl;
+          }
+          .bosh-icon{
+            position: absolute;
+            top: 38px;
+            right: 10px;
+            color: #cbcbcb;
+            font-size: 20px;
+            cursor: pointer;
+            &:hover{
+              color: #aaa;
+            }
+          }
+        }
+      }
+      .box-footer{
+        margin-top: 35px;
+        padding-bottom: 30px;
+        p{
+          font-size: 14px;
+          margin: 0;
+        }
+        a{
+          color: $mBlue;
+        }
+      }
+    }
+    &.verify{
+      .box-body{
+        padding: 20px;
+        p{
+          font-size: 14px;
+          &.sent-email{
+            text-align: center;
+          }
+        }
+      }
+      .box-footer{
+        margin: 10px 0;
+      }
+    }
+  }
+  &.signup{
+    .page-content{
+      padding-top: 20px;
+    }
+    .access-box{
+      margin: 40px auto 50px;
+      width: 660px;
+      .box-body{
+        padding: 0 30px;
+        padding-top: 0;
+        .heading{
+          display: flex;
+          padding: 30px 0;
+          // margin-bottom: 20px;
+          justify-content: space-between;
+          p{
+            margin: 0;
+            font-size: 14px;
+          }
+          .join{
+            font-size: 18px;
+            line-height: 1;
+          }
+        }
+        form.register{
+          margin-top: 20px;
+        }
+        .box-footer{
+          display: flex;
+          justify-content: space-between;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+/* ------------------------------- End Access ------------------------------- */

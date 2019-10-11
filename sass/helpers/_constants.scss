@@ -1,0 +1,30 @@
+// Colors
+$alW  : #f7f7f7;
+$dalW : #f1f1f1;
+$dlW : #f2f2f2;
+
+$vdBlue  : #02131d;
+$dBlue  : #003354;
+$mBlue  : #0186C9;
+$lBlue  : #90BDD4;
+$llBlue : #C0D8E5;
+
+$dGray  : #1f1f1f;
+$dlGray  : #2f2f2f;
+$mGray   : #323232;
+$mlGray  : #515151;
+$mllGray : #828282;
+$lGray : #afafaf;
+$llGray: #CBCBCB;
+
+$lBorder : #e1e1e1;
+$eRed : #fc1010;
+$Oran : #f99a2e;
+
+// Placeholders
+%lightShadow{
+  box-shadow:  0 1px 6px #ccc;
+}
+%mainShadow{
+  box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.18);
+}

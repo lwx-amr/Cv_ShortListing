@@ -1,0 +1,62 @@
+Droi/* -------------------------------- Start Cairo -------------------------------*/
+@font-face {
+    font-family: 'Cairo';
+    src: url('cairo/cairo-black-webfont.woff2') format('woff2'),
+         url('cairo/cairo-black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('cairo/cairo-bold-webfont.woff2') format('woff2'),
+         url('cairo/cairo-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('cairo/cairo-extralight-webfont.woff2') format('woff2'),
+         url('cairo/cairo-extralight-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('cairo/cairo-light-webfont.woff2') format('woff2'),
+         url('cairo/cairo-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('cairo/cairo-regular-webfont.woff2') format('woff2'),
+         url('cairo/cairo-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cairo';
+    src: url('cairo/cairo-semibold-webfont.woff2') format('woff2'),
+         url('cairo/cairo-semibold-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+/* -------------------------------- End Cairo -------------------------------*/
+/* -------------------------------- Start Droid -------------------------------*/
+@font-face {
+    font-family: 'Droid';
+    src: url('droid/arbfonts-droid_arabic_kufi_bold-webfont.woff2') format('woff2'),
+         url('droid/arbfonts-droid_arabic_kufi_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Droid';
+    src: url('droid/arbfonts-droid_arabic_kufi-webfont.woff2') format('woff2'),
+         url('droid/arbfonts-droid_arabic_kufi-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+/* -------------------------------- End Droid -------------------------------*/

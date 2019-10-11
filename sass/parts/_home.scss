@@ -1,0 +1,191 @@
+/* ---------------------------- Start Home ----------------------------*/
+.home{
+  section{
+    padding: 100px 0;
+    &.dark{
+      background-color: #F5F5F5;
+    }
+  }
+  .container{
+    max-width: 1140px;
+    width: 1140px;
+  }
+  .header{
+    position: relative;
+    background: url('../images/football-3024154_1920.jpg') center center no-repeat fixed;
+    height: 100vh;
+    .overlay{
+      background-color: rgba(#000,0.6);
+    }
+    .table{
+      height: 70%;
+    }
+    .header-text{
+      position: relative;
+      z-index: 5;
+      .middle-quote{
+        color: #efefef;
+        h1{
+          font-weight: 500;
+          font-size: 52px;
+        }
+      }
+    }
+  }
+  .about-us{
+    .sect-content{
+      .text{
+        padding: 70px 30px 0;
+        line-height: 28px;
+        p{
+          margin-bottom: 25px;
+          &:last-of-type{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .testimonials{
+    margin: 0 100px;
+    .container{
+      width: 100%;
+    }
+    .row >div{
+      padding: 0 12px;
+    }
+    .row {
+      margin-top: 24px;
+      &>div{
+        &:nth-of-type(3n + 1) {
+          display: flex;
+          justify-content: flex-end;
+        }
+        &:nth-of-type(3n + 3) {
+          display: flex;
+          justify-content: flex-start;
+        }
+        &:nth-of-type(3n + 2) {
+          position: relative;
+          top: -130px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+    .testimonials-area{
+      margin-top: 230px;
+      .testi{
+        width: 320px;
+        max-width: 320px;
+        min-height: 280px;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        -webkit-box-shadow: 0 1px 6px 2px #ccc;
+        box-shadow: 0 1px 6px 2px #ccc;
+        background-image: url('../images/quote.svg');
+        background-size: 80px;
+        background-repeat: no-repeat;
+        background-position: 10% 92%;
+        margin-bottom: 50px;
+        .head{
+          .image{
+            display: flex;
+            img{
+              @include  circled(70px);
+            }
+          }
+          .details{
+            text-align: right;
+            padding: 10px 20px 0 0;
+            h6{
+              margin-bottom: 0px;
+              color: $mlGray;
+            }
+            span{
+              font-size: 12px;
+              color:$lGray;;
+            }
+          }
+        }
+        .text{
+          text-align: right;
+          margin-top:30px;
+          padding: 0 20px;
+          p{
+            margin: 20px 0 30px;
+            color: $mllGray;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .join-first{
+    position: relative;
+    background: url('../images/headerBack.jpg') center center no-repeat fixed;
+    .overlay{
+      background-color: rgba(#fff,0.9);
+    }
+    .section-head{
+      h2{
+      }
+    }
+    .btn{
+      border-radius: 0;
+      padding: 15px 40px 16px;
+    }
+  }
+  .contact-us{
+    padding-bottom: 40px;
+    position: relative;
+    background: url('../images/headerBack.jpg') center center no-repeat fixed;
+    .overlay{
+      background-color: rgba(#000,0.9);
+    }
+    .section-head{
+      color: #fff;
+      h2{
+        color: #fff;
+        margin-bottom: 10px;
+      }
+    }
+    .contact-form{
+      width: 55%;
+      margin: auto;
+      margin-bottom: 80px;
+      .form-group{
+        margin-bottom: 25px;
+        input,textarea{
+          background-color: $alW;
+        }
+        input::placeholder{
+          text-align: right;
+        }
+      }
+      .submit-button{
+        display: flex;
+        justify-content: flex-start;
+        .btn{
+          padding: 5px 20px 7px;
+        }
+      }
+    }
+    .tail{
+      margin-top: 70px;
+      direction: ltr;
+      span{
+        display: inline-block;
+        margin-left: 1px;
+        font-size: 14px;
+      }
+      p{
+        color: #fff;
+        margin: 0;
+        font-weight: 600;
+      }
+    }
+  }
+}
+/* ---------------------------- End Home ----------------------------*/

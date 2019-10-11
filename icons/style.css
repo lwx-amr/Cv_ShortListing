@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'bosh-icon';
+  src:  url('fonts/bosh-icon.eot?h8q5rl');
+  src:  url('fonts/bosh-icon.eot?h8q5rl#iefix') format('embedded-opentype'),
+    url('fonts/bosh-icon.ttf?h8q5rl') format('truetype'),
+    url('fonts/bosh-icon.woff?h8q5rl') format('woff'),
+    url('fonts/bosh-icon.svg?h8q5rl#bosh-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.bosh-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'bosh-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bosh-right-quote:before {
+  content: "\e913";
+  color: #e9e9e9;
+}
+.bosh-left-quote:before {
+  content: "\e912";
+  color: #e9e9e9;
+}
+.bosh-circle:before {
+  content: "\e914";
+}
+.bosh-edit-2:before {
+  content: "\e90f";
+}
+.bosh-edit:before {
+  content: "\e910";
+}
+.bosh-trash-2:before {
+  content: "\e911";
+}
+.bosh-rss:before {
+  content: "\e90e";
+}
+.bosh-target:before {
+  content: "\e90d";
+}
+.bosh-video:before {
+  content: "\e900";
+}
+.bosh-play:before {
+  content: "\e901";
+}
+.bosh-upload:before {
+  content: "\e902";
+}
+.bosh-users:before {
+  content: "\e903";
+}
+.bosh-user-plus:before {
+  content: "\e904";
+}
+.bosh-user:before {
+  content: "\e905";
+}
+.bosh-eye-off:before {
+  content: "\e906";
+}
+.bosh-eye:before {
+  content: "\e907";
+}
+.bosh-search:before {
+  content: "\e908";
+}
+.bosh-chevron-right:before {
+  content: "\e909";
+}
+.bosh-chevron-left:before {
+  content: "\e90a";
+}
+.bosh-chevron-down:before {
+  content: "\e90b";
+}
+.bosh-chevron-up:before {
+  content: "\e90c";
+}
+.bosh-star-empty:before {
+  content: "\e9d7";
+}
+.bosh-star-half:before {
+  content: "\e9d8";
+}
+.bosh-star-full:before {
+  content: "\e9d9";
+}
+.bosh-facebook:before {
+  content: "\ea90";
+}
+.bosh-instagram:before {
+  content: "\ea92";
+}
+.bosh-twitter:before {
+  content: "\ea96";
+}
+.bosh-reddit:before {
+  content: "\eac6";
+}
+.bosh-linkedin2:before {
+  content: "\eaca";
+}

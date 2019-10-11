@@ -1,0 +1,22 @@
+/* ------------------------------ Start Footer -------------------------------*/
+.footer{
+  padding: 80px 0 40px;
+  background-color: $vdBlue;
+  color: #fff;
+  .image{
+    width: 200px;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  h5{
+    margin-bottom: 50px;
+  }
+  .tail{
+    margin-top: 70px;
+    direction: ltr;
+    p{
+      margin: 0;
+    }
+  }
+}
+/* ------------------------------ End Footer -------------------------------*/

@@ -1,0 +1,21 @@
+// Buttons
+@mixin button($backColor,$color){
+    background-color: #{$backColor};
+    color: #{$color};
+    &:hover{
+      color: #{$color};
+    }
+}
+
+// Make Circle
+@mixin circled ( $value ) {
+  width: #{$value};
+  height: #{$value};
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+// Animation
+@mixin animate($value, $time) {
+  transition: #{$value} #{$time} ease-in-out;
+}
