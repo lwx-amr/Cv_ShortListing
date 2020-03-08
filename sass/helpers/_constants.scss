@@ -1,30 +1,39 @@
-// Colors
-$alW  : #f7f7f7;
-$dalW : #f1f1f1;
-$dlW : #f2f2f2;
+// Colours
+$main-yellow:  #ffe005;
+$main-gray:    #202020;
+$main-fgray:   #3f3f3f;
+$main-tGray:   #525252;
+$main-lGray:   #6a6a6a;
+$main-llGray:  #8c8c8c;
 
-$vdBlue  : #02131d;
-$dBlue  : #003354;
-$mBlue  : #0186C9;
-$lBlue  : #90BDD4;
-$llBlue : #C0D8E5;
+// Blue
+$dBlue: #2F2E41;
+$babyBlue: #00ADB5;
+$links: #0059AB;
 
-$dGray  : #1f1f1f;
-$dlGray  : #2f2f2f;
-$mGray   : #323232;
-$mlGray  : #515151;
-$mllGray : #828282;
-$lGray : #afafaf;
-$llGray: #CBCBCB;
+// Gray
+$alW: #F9F9F9;
+$llGray: #E1E1E1;
+$lGray: #9FA2B4;
+$mlGray: #707070;
+$mGray: #2A2C21;
 
-$lBorder : #e1e1e1;
-$eRed : #fc1010;
-$Oran : #f99a2e;
+// Classes
+$classA: #6C63FF;
+$classB: #2196F3;
+$classC: #69F0AE;
+
 
 // Placeholders
-%lightShadow{
-  box-shadow:  0 1px 6px #ccc;
+%box-shadow{
+  box-shadow: 0 -5px 10px 2px #ccc;
 }
-%mainShadow{
-  box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.18);
+%shadow{
+  box-shadow: 0 1px 7px 0 rgba(#000,0.2);
+}
+%cover{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

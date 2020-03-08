@@ -1,169 +1,37 @@
-/* ------------------------------ Start Navbar ------------------------------*/
-.navbar{
-    background-color: $dBlue;
-    padding: 7px 66px;
-    .navbar-brand {
-      margin: 0;
-      img{
-        width: 160px;
-        position: relative;
-        top: 6px;
-      }
-    }
-    .collapse{
-      margin-right: 40px;
-      justify-content: space-between;
-      .nav-item{
-        padding: 4px 20px;
-        .nav-link{
-          padding: 0;
-          @include animate(all,220ms);
-          color: #fff;
-        }
-      }
-      .search-form{
-        position: relative;
-        margin-right: 60px;
-        input{
-          padding: 5px 10px 6px;
-          height: auto;
-          border: 0;
-          border-radius: 2px;
-          width: 400px;
-          font-size: 14px;
-          text-align: right;
-          direction: rtl;
-          &::placeholder{
-            font-size: 14px;
-            color: $lGray;
-          }
-          &:focus ~ *{
-            background-color: $Oran;
-            i{
-              color: #fff;
-            }
-          }
-        }
-        .submit-btn{
-          @include animate(all,220ms);
-          position: absolute;
-          top: 0;
-          left: 0px;
-          padding: 0 20px;
-          height: 32px;
-          line-height: 34px;
-          border-radius: 0;
-          background-color: $dalW;
-          i{
-            font-size: 18px;
-            color: $mGray;
-          }
-        }
-      }
-      .dropdown{
-        .dropdown-menu{
-          text-align: right;
-          padding: 10px 0px 0px;
-          border-radius: 0;
-          border: 0;
-          box-shadow: 0 1px 6px #39494c59;
-          left: -20px;
-          width: 200px;
-        }
-        .logout{
-          border-top: 1px solid $lBorder;
-          a{
-            padding-top: 7px;
-            padding-bottom: 12px;
-            margin-bottom: 0;
-          }
-        }
-        .dropdown-item{
-          font-size: 13px;
-          padding: 6px 25px;
-          &:hover{
-            background-color: $dlW;
-
-          }
-          .image{
-            margin-left: 8px;
-            @include circled(30px);
-          }
-          .media-body{
-            padding-top: 4px;
-          }
-        }
-        .dropdown-toggle{
-          background-color: transparent;
-          border: 0;
-          color: #fff;
-          .image{
-            @include circled(35px);
-            margin-right: 20px;
-          }
-          .media-body{
-            position: relative;
-            top: 3px;
-            span{
-              margin-right: 15px;
-              font-size: 14px;
-              font-weight: bold;
-            }
-            i{
-              position: relative;
-              top: 3px;
-            }
-          }
-          &::after{
-            display: none;
-          }
-        }
-      }
-    }
-}
-.home{
+.nav-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  .container{
+    padding: 0;
+  }
   .navbar{
     background-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    transition: background 0.2s ease-in-out;
-    .nav-item{
-      padding: 0px 20px;
+    box-shadow: none;
+    .navbar-nav{
       .nav-link{
-        padding: 4px 0 8px;
-        border-bottom: 1px solid transparent;
-      }
-    }
-    .buttons{
-      a{
-        color: #fff;
-        border-radius: 0;
-        border: 1px solid #fff;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 14px;
-        &:first-of-type{
-            border: 0;
+        padding: 8px 0;
+        margin-left: 30px;
+        color: rgba($dBlue,0.8);
+        &:hover{
+          color: $dBlue;
         }
-        &:last-of-type:hover{
-
+        &.btn-bBlue{
+          background-color: $babyBlue;
+          color: #fff !important;
+          padding: 4px 20px !important;
+          border-radius: 10px;
         }
       }
-    }
-    &.scroll{
-      background-color: $dBlue;
-      .nav-item{
-        &.active{
-          .nav-link{
-            border-bottom: 1px solid $mBlue;
-          }
+      li.active{
+        .nav-link{
+          color: $dBlue;
         }
       }
     }
   }
 }
-/* ------------------------------ End Navbar ------------------------------*/

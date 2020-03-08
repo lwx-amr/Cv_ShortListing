@@ -1,21 +1,22 @@
-// Buttons
-@mixin button($backColor,$color){
-    background-color: #{$backColor};
-    color: #{$color};
-    &:hover{
-      color: #{$color};
-    }
+@mixin animate($value, $time) {
+  -webkit-transition: #{$value} #{$time} ease-in-out;
+  transition:#{$value} #{$time} ease-in-out;
 }
-
-// Make Circle
-@mixin circled ( $value ) {
+@mixin trans($value) {
+  -webkit-transform: #{$value};
+  transform: #{$value};
+}
+@mixin circleIt($value) {
   width: #{$value};
   height: #{$value};
   border-radius: 50%;
   overflow: hidden;
 }
-
-// Animation
-@mixin animate($value, $time) {
-  transition: #{$value} #{$time} ease-in-out;
+@mixin border($value,$place) {
+  @if ( $place == 'all') {
+    border: #{$value} solid rgba(#eee,0.6);
+  }
+  @else{
+    border-#{$place}: #{$value} solid rgba(#eee,0.6);
+  }
 }

@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'Buono-icon';
+  src:  url('fonts/Buono-icon.eot?kmmsz6');
+  src:  url('fonts/Buono-icon.eot?kmmsz6#iefix') format('embedded-opentype'),
+    url('fonts/Buono-icon.ttf?kmmsz6') format('truetype'),
+    url('fonts/Buono-icon.woff?kmmsz6') format('woff'),
+    url('fonts/Buono-icon.svg?kmmsz6#Buono-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.buono-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Buono-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.buono-bookmarks1:before {
+  content: "\e904";
+}
+.buono-chevron-down:before {
+  content: "\e905";
+}
+.buono-database:before {
+  content: "\e906";
+}
+.buono-facebook1:before {
+  content: "\e907";
+}
+.buono-heart1:before {
+  content: "\e908";
+}
+.buono-link:before {
+  content: "\e909";
+}
+.buono-mail:before {
+  content: "\e90a";
+}
+.buono-phone:before {
+  content: "\e90b";
+}
+.buono-quotes-left1:before {
+  content: "\e90c";
+}
+.buono-quotes-right1:before {
+  content: "\e90d";
+}
+.buono-refresh-cw:before {
+  content: "\e90e";
+}
+.buono-sliders:before {
+  content: "\e90f";
+}
+.buono-smartphone:before {
+  content: "\e910";
+}
+.buono-star-empty1:before {
+  content: "\e911";
+}
+.buono-star-full1:before {
+  content: "\e912";
+}
+.buono-star-half1:before {
+  content: "\e913";
+}
+.buono-github:before {
+  content: "\e903";
+}
+.buono-instagram:before {
+  content: "\e901";
+}
+.buono-twitter:before {
+  content: "\e902";
+}
+.buono-logo:before {
+  content: "\e900";
+}
+.buono-quotes-left:before {
+  content: "\e977";
+}
+.buono-quotes-right:before {
+  content: "\e978";
+}
+.buono-bookmarks:before {
+  content: "\e9d3";
+}
+.buono-star-empty:before {
+  content: "\e9d7";
+}
+.buono-star-half:before {
+  content: "\e9d8";
+}
+.buono-star-full:before {
+  content: "\e9d9";
+}
+.buono-heart:before {
+  content: "\e9da";
+}
+.buono-facebook:before {
+  content: "\ea90";
+}

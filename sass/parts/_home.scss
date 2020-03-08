@@ -1,191 +1,166 @@
-/* ---------------------------- Start Home ----------------------------*/
 .home{
-  section{
-    padding: 100px 0;
-    &.dark{
-      background-color: #F5F5F5;
-    }
-  }
-  .container{
-    max-width: 1140px;
-    width: 1140px;
-  }
   .header{
     position: relative;
-    background: url('../images/football-3024154_1920.jpg') center center no-repeat fixed;
-    height: 100vh;
-    .overlay{
-      background-color: rgba(#000,0.6);
+    padding-top: 100px;
+    .container{
+      height: 65vh;
     }
-    .table{
-      height: 70%;
-    }
-    .header-text{
-      position: relative;
-      z-index: 5;
-      .middle-quote{
-        color: #efefef;
-        h1{
+    .body{
+      .row{
+        display: flex;
+        align-items: center;
+        .text{
+          color: $dBlue;
+          font-size: 18px;
           font-weight: 500;
-          font-size: 52px;
+          letter-spacing: 0.2px;
+          .logo{
+            font-size: 108px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 8px;
+            font-style: italic;
+            text-shadow: 4px 4px 6px rgba(#000,0.30);
+          }
+          .get-start{
+            margin-top: 60px;
+          }
         }
       }
+    }
+    .svg-shape{
+      position: absolute;
+      top: 100px;
+      right: 150px;
+      img{
+        width: 300px;
+      }
+    }
+  }
+  .down-arrow{
+    padding: 50px 0 ;
+    img{
+      width:30px;
+      animation-name: upDown;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-in-out;;
+      animation-iteration-count: infinite;
+      cursor: pointer;
     }
   }
   .about-us{
-    .sect-content{
-      .text{
-        padding: 70px 30px 0;
-        line-height: 28px;
-        p{
-          margin-bottom: 25px;
-          &:last-of-type{
-            margin-bottom: 0;
-          }
-        }
+    .upper-text{
+      padding: 0px 194px 100px;
+      &>p{
+        font-family: 'cinzel', sans-serif;
+        font-size: 122px;
+        line-height: 135px;
+        font-weight: 700;
+        color: $main-gray;
       }
-    }
-  }
-  .testimonials{
-    margin: 0 100px;
-    .container{
-      width: 100%;
-    }
-    .row >div{
-      padding: 0 12px;
-    }
-    .row {
-      margin-top: 24px;
-      &>div{
-        &:nth-of-type(3n + 1) {
-          display: flex;
-          justify-content: flex-end;
-        }
-        &:nth-of-type(3n + 3) {
-          display: flex;
-          justify-content: flex-start;
-        }
-        &:nth-of-type(3n + 2) {
-          position: relative;
-          top: -130px;
-          display: flex;
-          justify-content: center;
-        }
-      }
-    }
-    .testimonials-area{
-      margin-top: 230px;
-      .testi{
-        width: 320px;
-        max-width: 320px;
-        min-height: 280px;
-        padding: 30px;
-        background-color: #fff;
-        border-radius: 8px;
-        -webkit-box-shadow: 0 1px 6px 2px #ccc;
-        box-shadow: 0 1px 6px 2px #ccc;
-        background-image: url('../images/quote.svg');
-        background-size: 80px;
-        background-repeat: no-repeat;
-        background-position: 10% 92%;
-        margin-bottom: 50px;
-        .head{
-          .image{
-            display: flex;
-            img{
-              @include  circled(70px);
-            }
-          }
-          .details{
-            text-align: right;
-            padding: 10px 20px 0 0;
-            h6{
-              margin-bottom: 0px;
-              color: $mlGray;
-            }
-            span{
-              font-size: 12px;
-              color:$lGray;;
-            }
-          }
-        }
-        .text{
-          text-align: right;
-          margin-top:30px;
-          padding: 0 20px;
-          p{
-            margin: 20px 0 30px;
-            color: $mllGray;
-            font-size: 14px;
-          }
-        }
-      }
-    }
-  }
-  .join-first{
-    position: relative;
-    background: url('../images/headerBack.jpg') center center no-repeat fixed;
-    .overlay{
-      background-color: rgba(#fff,0.9);
-    }
-    .section-head{
-      h2{
-      }
-    }
-    .btn{
-      border-radius: 0;
-      padding: 15px 40px 16px;
-    }
-  }
-  .contact-us{
-    padding-bottom: 40px;
-    position: relative;
-    background: url('../images/headerBack.jpg') center center no-repeat fixed;
-    .overlay{
-      background-color: rgba(#000,0.9);
-    }
-    .section-head{
-      color: #fff;
-      h2{
-        color: #fff;
-        margin-bottom: 10px;
-      }
-    }
-    .contact-form{
-      width: 55%;
-      margin: auto;
-      margin-bottom: 80px;
-      .form-group{
-        margin-bottom: 25px;
-        input,textarea{
-          background-color: $alW;
-        }
-        input::placeholder{
-          text-align: right;
-        }
-      }
-      .submit-button{
+      .quote{
         display: flex;
-        justify-content: flex-start;
-        .btn{
-          padding: 5px 20px 7px;
+        justify-content: space-between;
+        &>span{
+          display:block;
+          width: 278px;
+          height: 2px;
+          background-color: $main-tGray;
+          flex-shrink: 0;
+        }
+        p{
+          position: relative;
+          top: -9px;
+          margin-left: 55px;
+          display: block;
+          font-size: 18px;
+          color: $main-tGray;
+          span{
+            font-weight: 600;
+          }
         }
       }
+    }
+    .text-image{
+      .row{
+        align-items: center;
+        .text{
+          h3{
+            line-height: 80px;
+            font-size: 42px;
+            font-weight: 500;
+            color: $mlGray;
+            margin: 80px 0 0 20px;
+          }
+        }
+      }
+    }
+  }
+  .features{
+    background-color: #FAFAFA;
+    .content-box{
+      margin-top: 80px;
+      .feat{
+        background-color: #fff;
+        padding: 50px 35px;
+        @extend %shadow;
+        margin: 0 30px;
+        .feat-icon{
+          margin-bottom: 30px;
+          height: 80px;
+        }
+        .feat-heading{
+          font-size: 24px;
+          color: $main-gray;
+          margin-bottom: 30px;
+        }
+        .feat-desc{
+          margin-top: 0;
+          color: $main-llGray;
+        }
+      }
+    }
+  }
+  .get-start{
+    h3{
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+    p{
+      font-size: 18px;
+      color: $lGray;
+      font-weight: 500;
+      margin-bottom: 80px;
+    }
+  }
+  footer{
+    padding: 40px 0;
+    background-color: $dBlue;
+    .body{
+      height: 200px;
     }
     .tail{
-      margin-top: 70px;
-      direction: ltr;
-      span{
-        display: inline-block;
-        margin-left: 1px;
-        font-size: 14px;
-      }
       p{
+        font-size: 18px;
+        font-weight: 700;
         color: #fff;
-        margin: 0;
-        font-weight: 600;
       }
     }
   }
 }
-/* ---------------------------- End Home ----------------------------*/
+
+
+
+@keyframes upDown {
+  0%{
+    @include trans(translateY(0px));
+  }
+  50%{
+    @include trans(translateY(-10px));
+  }
+  100%{
+    @include trans(translateY(0px));
+  }
+}

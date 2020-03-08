@@ -1,153 +1,163 @@
-/* ------------------------------- Start Access ------------------------------- */
+/*----------------------------- Start Access ---------------------------------*/
 .access{
-  .page-content{
-    background-color: $alW;
-    min-height: 100vh;
-    .page-head{
-      text-align: center;
-      padding: 40px 0 20px;
-      p{
-        font-size: 20px;
-        color: $dlGray;
-      }
-    }
-    .page-footer{
-      p{
-        color: $mllGray;
-        margin: 0;
-      }
-    }
-  }
-  .access-box{
-    background-color: #fff;
-    @extend %lightShadow;
+  height: 100vh;
+  background-color:#f6f6f6;
+  color: #fff;
+  padding-top: 11vh;
+  .container{
+    width: 1000px;
+    border-radius: 5px;
     overflow: hidden;
-    border-radius: 12px;
-    margin: auto;
-    .box-head{
-      padding:  30px 0 19px;
-      text-align: center;
-      background-color: $dBlue;
-      img{
-        width: 185px;
+    box-shadow: 0 1px 10px 2px #ccc;
+    -webkit-box-shadow: 0 1px 10px 2px #ccc;
+  }
+  .content-acc{
+    background-color: #fcfcfc;
+    height: 80vh;
+  }
+  .row{
+    height: 100%;
+    &>div{
+      background-color: #fff;
+      position: relative;
+      &:first-of-type{
+        height: 100%;
+        background:url("../images/rowBack.jpg");
       }
     }
-    .error-notice{
-      padding: 10px 10px;
-      color: #86181d;
-      background-color: #ffdce0;
-      border:1px solid rgba(27,31,35,.15);
-      border-radius: 4px;
-      display: none;
-      font-size: 12px;
-      &.showen{
-        display: block;
+  }
+  .form {
+    color: #333;
+    padding: 50px 0px;
+    input.btn{
+      width: auto !important;
+      border: 1px solid #ccc;
+      margin-left: 0;
+      font-size: 18px;
+      padding: 5px 35px;
+      border-radius: 5px;
+      background-color: #00b468;
+      color: #fff;
+      margin-top: 35px;
+    }
+    h5{
+      color: #555;
+      text-transform: capitalize;
+    }
+    form{
+      margin: 90px 0 0;
+    }
+    input{
+      width: 65%;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+      margin-top: 20px;
+      color: #666;
+      margin: 7px auto 0;
+      padding: 5px 20px;
+      &:focus{
+        outline: 0;
       }
+    }
+  }
+  .outers{
+    margin-top: 35px;
+    a{
+      display: inline-block;
+      padding: 2px 25px;
+      background-color: rgb(96, 146, 200);
+      color: #fff;
+      margin: 10px 10px;
+      border-radius: 5px;
+    }
+  }
+  .stat{
+    position: absolute;
+    bottom: 40px;
+    left: calc(50% - 138px);
+  }
+  .overlay{
+    background-color: rgba(0, 0, 0, 0.14);
+    img{
+      height: 100%;
+    }
+    .text{
+      margin-top: 120px;
       p{
-        margin-bottom: 0;
-      }
-    }
-    .link{
-      font-size: 12px;
-      color: $mBlue;
-    }
-  }
-  &.signin{
-    .access-box{
-      width: 320px;
-      text-align: right;
-      margin-bottom: 50px;
-      .box-body{
-        padding: 30px 30px 0 30px;
-        .error-notice{
-          margin-bottom: 20px;
-        }
-        button{
-            width: 100%;
-            text-align: center;
-        }
-        .password{
-          position: relative;
-          label{
-            display: flex;
-            justify-content: space-between;
-            direction: rtl;
-          }
-          .bosh-icon{
-            position: absolute;
-            top: 38px;
-            right: 10px;
-            color: #cbcbcb;
-            font-size: 20px;
-            cursor: pointer;
-            &:hover{
-              color: #aaa;
-            }
-          }
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        &:last-of-type{
+          font-size: 18px;
+          margin-top: 50px;
+          padding: 0 50px;
+          font-weight: 400;
+          letter-spacing: 3px;
         }
       }
-      .box-footer{
-        margin-top: 35px;
-        padding-bottom: 30px;
-        p{
-          font-size: 14px;
-          margin: 0;
-        }
-        a{
-          color: $mBlue;
-        }
-      }
-    }
-    &.verify{
-      .box-body{
-        padding: 20px;
-        p{
-          font-size: 14px;
-          &.sent-email{
-            text-align: center;
-          }
-        }
-      }
-      .box-footer{
-        margin: 10px 0;
+      h2{
+        font-size: 60px;
+        margin-top: 30px;
       }
     }
   }
-  &.signup{
-    .page-content{
-      padding-top: 20px;
+  &.register{
+    padding-top: 10vh;
+    .content-acc{
+      height: 80vh !important;
     }
-    .access-box{
-      margin: 40px auto 50px;
-      width: 660px;
-      .box-body{
-        padding: 0 30px;
-        padding-top: 0;
-        .heading{
-          display: flex;
-          padding: 30px 0;
-          // margin-bottom: 20px;
-          justify-content: space-between;
-          p{
-            margin: 0;
-            font-size: 14px;
-          }
-          .join{
-            font-size: 18px;
-            line-height: 1;
-          }
-        }
-        form.register{
-          margin-top: 20px;
-        }
-        .box-footer{
-          display: flex;
-          justify-content: space-between;
-          margin-top: 30px;
-          margin-bottom: 30px;
-        }
+    .form{
+      input{
+        margin-top: 13px;
+      }
+      .foot{
+        margin-top: 20px;
       }
     }
   }
 }
-/* ------------------------------- End Access ------------------------------- */
+.register .form input[type="file"]{
+  width: 99px;
+  position: relative;
+}
+.register .form .file{
+  width: 335px;
+  justify-content: space-between;
+}
+.register .form .file span{
+  width: 30px;
+  height: 30px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 10px;
+}
+.register .form .file input[type="file"]{
+  width: 120px;
+  height: 30px;
+}
+.register .form .file input[type="file"]::after{
+  content: "Upload Image";
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 120px;
+  height: 51px;
+  background-color: #fff;
+  line-height: 31px;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+.register .form .foot h6{
+  margin: 30px 0 0 60px;
+}
+.register.access .form form{
+  margin: 50px 0 30px;
+}
+.register.access .form .form-group{
+  margin-bottom: 7px;
+}
+/*----------------------------- End Acess---------------------------------*/

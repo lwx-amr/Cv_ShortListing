@@ -1,0 +1,87 @@
+.buono-sidebar{
+  &.sidebar-nav{
+    width: auto;
+    position: fixed;
+    top: 28%;
+    right:0;
+    background-color: #fff;
+    z-index: 999;
+    border-radius: 17px 0 0 17px;
+    @extend %shadow;
+    @include animate(all,220ms);
+    @include trans(translateX(100%));
+    &.active{
+      @include trans(translateX(0));
+      .icon{
+        &>*{
+          @include trans(rotate(180deg));
+        }
+      }
+    }
+    ul {
+      margin: 0;
+      li{
+        padding: 20px 10px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        overflow: hidden;
+        @include border(1px,bottom);
+        @include animate(all,220ms);
+        cursor: pointer;
+        &.active{
+          background-color: $main-tGray;
+          color: #fff;
+          &:hover{
+            background-color: $main-tGray;
+          }
+        }
+        &:hover{
+          background-color: #f1f1f1;
+        }
+        &:first-of-type{
+          border-radius: 15px 0  0 0;
+        }
+        &:last-of-type{
+          border-radius: 0 0  0 15px;
+          border-bottom: 0;
+        }
+      }
+    }
+    .icon{
+      &>*{
+        @include animate(all,320ms);
+      }
+      position: absolute;
+      top: 45%;
+      color: #fff;
+      text-align: center;
+      left: -30px;
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      cursor: pointer;
+    }
+  }
+  &.general{
+    margin-left:30px;
+    .buono-widget{
+      background-color: #fff;
+      margin-bottom: 30px;
+      // box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+      .widget-title{
+        color: $main-gray;
+        border-bottom:1px solid $main-llGray;
+        padding:0px 0 10px 10px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+      .widget-body{
+        padding: 15px 20px 20px 40px;
+      }
+    }
+  }
+}
