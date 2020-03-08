@@ -1,163 +1,205 @@
-/*----------------------------- Start Access ---------------------------------*/
+/* ------------------------------- Start Access ------------------------------- */
 .access{
-  height: 100vh;
-  background-color:#f6f6f6;
-  color: #fff;
-  padding-top: 11vh;
-  .container{
-    width: 1000px;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 1px 10px 2px #ccc;
-    -webkit-box-shadow: 0 1px 10px 2px #ccc;
-  }
-  .content-acc{
-    background-color: #fcfcfc;
-    height: 80vh;
-  }
-  .row{
-    height: 100%;
-    &>div{
-      background-color: #fff;
-      position: relative;
-      &:first-of-type{
-        height: 100%;
-        background:url("../images/rowBack.jpg");
+  .page-content{
+    background-color: $alW;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    .page-head{
+      text-align: center;
+      padding: 40px 0 40px;
+      .logo{
+        margin-bottom: 30px;
       }
-    }
-  }
-  .form {
-    color: #333;
-    padding: 50px 0px;
-    input.btn{
-      width: auto !important;
-      border: 1px solid #ccc;
-      margin-left: 0;
-      font-size: 18px;
-      padding: 5px 35px;
-      border-radius: 5px;
-      background-color: #00b468;
-      color: #fff;
-      margin-top: 35px;
-    }
-    h5{
-      color: #555;
-      text-transform: capitalize;
-    }
-    form{
-      margin: 90px 0 0;
-    }
-    input{
-      width: 65%;
-      background: transparent;
-      border: 0;
-      border-bottom: 1px solid #ccc;
-      border-radius: 0;
-      margin-top: 20px;
-      color: #666;
-      margin: 7px auto 0;
-      padding: 5px 20px;
-      &:focus{
-        outline: 0;
-      }
-    }
-  }
-  .outers{
-    margin-top: 35px;
-    a{
-      display: inline-block;
-      padding: 2px 25px;
-      background-color: rgb(96, 146, 200);
-      color: #fff;
-      margin: 10px 10px;
-      border-radius: 5px;
-    }
-  }
-  .stat{
-    position: absolute;
-    bottom: 40px;
-    left: calc(50% - 138px);
-  }
-  .overlay{
-    background-color: rgba(0, 0, 0, 0.14);
-    img{
-      height: 100%;
-    }
-    .text{
-      margin-top: 120px;
       p{
-        font-size: 24px;
+        font-size: 18px;
+        color: $mGray;
         font-weight: 500;
-        letter-spacing: 2px;
-        &:last-of-type{
-          font-size: 18px;
-          margin-top: 50px;
-          padding: 0 50px;
-          font-weight: 400;
-          letter-spacing: 3px;
+      }
+    }
+    .page-footer{
+      p{
+        color: $mGray;
+        margin: 0;
+        font-weight: 600;
+        font-size: 14px;
+        a{
+          color: $links;
         }
       }
-      h2{
-        font-size: 60px;
-        margin-top: 30px;
+    }
+  }
+  .access-box{
+    background-color: #fff;
+    @extend %lightShadow;
+    overflow: hidden;
+    border-radius: 3px;
+    margin: auto;
+    font-weight: 500;
+    .error-notice{
+      padding: 10px 10px;
+      color: #86181d;
+      background-color: #ffdce0;
+      border:1px solid rgba(27,31,35,.15);
+      border-radius: 4px;
+      display: none;
+      font-size: 12px;
+      &.showen{
+        display: block;
+      }
+      p{
+        margin-bottom: 0;
+      }
+    }
+    .link{
+      font-size: 12px;
+      color: $links;
+    }
+    label{
+      font-size: 14px;
+    }
+    .form-control{
+      border: 1px solid $llGray;
+      border-radius: 3px;
+      padding: 4px 8px;
+      &:hover, &:focus{
+        box-shadow: none;
+        outline: none;
+      }
+    }
+    .btn{
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 3px;
+      padding: 8px 0 4px;
+      margin-top: 14px;
+    }
+  }
+  &.signin{
+    .access-box{
+      width: 320px;
+      margin-bottom: 50px;
+      .box-body{
+        padding: 30px 30px;
+        .error-notice{
+          margin-bottom: 20px;
+        }
+        button{
+            width: 100%;
+            text-align: center;
+        }
+        .password{
+          position: relative;
+          font-size: 14px;
+          label{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .bosh-icon{
+            position: absolute;
+            top: 38px;
+            right: 10px;
+            color: #cbcbcb;
+            font-size: 20px;
+            cursor: pointer;
+            &:hover{
+              color: #aaa;
+            }
+          }
+        }
+      }
+      .box-footer{
+        margin-top: 35px;
+        padding-bottom: 30px;
+        p{
+          font-size: 14px;
+          margin: 0;
+        }
+        a{
+          color: $links;
+        }
+      }
+    }
+    &.verify{
+      .box-body{
+        padding: 20px;
+        p{
+          font-size: 14px;
+          &.sent-email{
+            text-align: center;
+          }
+        }
+      }
+      .box-footer{
+        margin: 10px 0;
       }
     }
   }
-  &.register{
-    padding-top: 10vh;
-    .content-acc{
-      height: 80vh !important;
+  &.signup{
+    .page-content{
+      padding-top: 60px;
     }
-    .form{
-      input{
-        margin-top: 13px;
+    .access-box{
+      // margin: 40px auto 50px;
+      
+      background-color: #393E46;  
+      width: 960px;
+      .left-box{
+        padding: 60px 25px 0;
+        .logo{
+          width: 160px;
+          margin: auto;
+        }
+        .girl{
+          margin-top: 60px;
+        }
       }
-      .foot{
-        margin-top: 20px;
+      .right-box{
+        background-color: #fff;
+        padding: 40px;
+        .box-head{
+          margin-bottom: 30px;
+          h5{
+            color: $mGray;
+          }
+        }
+        .form-inputs{
+          padding-right: 80px;
+          label{
+            margin-bottom: 5px;
+            color: $mGray;
+            font-weight: 600;
+          }  
+          .check-box{
+            input{
+              margin-right: 10px;
+            }
+          }
+        }
+        .box-footer{
+          margin-top: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .btn{
+            margin: 0;
+            padding: 8px 40px;
+          }
+          p{
+            margin: 0;
+            font-size: 14px;
+          }
+        }
       }
     }
   }
+  &.verify{
+    a{
+      width: 100%;
+    }
+  }
+  a{
+    color: $links;
+  }
 }
-.register .form input[type="file"]{
-  width: 99px;
-  position: relative;
-}
-.register .form .file{
-  width: 335px;
-  justify-content: space-between;
-}
-.register .form .file span{
-  width: 30px;
-  height: 30px;
-  background-color: #e5e5e5;
-  border-radius: 50%;
-  display: inline-block;
-  margin-top: 10px;
-}
-.register .form .file input[type="file"]{
-  width: 120px;
-  height: 30px;
-}
-.register .form .file input[type="file"]::after{
-  content: "Upload Image";
-  position: absolute;
-  top: 0;
-  left:0;
-  width: 120px;
-  height: 51px;
-  background-color: #fff;
-  line-height: 31px;
-  color: #333;
-  font-weight: 500;
-  cursor: pointer;
-}
-.register .form .foot h6{
-  margin: 30px 0 0 60px;
-}
-.register.access .form form{
-  margin: 50px 0 30px;
-}
-.register.access .form .form-group{
-  margin-bottom: 7px;
-}
-/*----------------------------- End Acess---------------------------------*/
+/* ------------------------------- End Access ------------------------------- */
