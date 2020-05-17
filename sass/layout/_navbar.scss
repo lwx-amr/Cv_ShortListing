@@ -1,4 +1,5 @@
-.nav-wrapper{
+/*-------------------------- Start Navbar -------------------------- */
+.home .nav-wrapper{
   position: absolute;
   top: 0;
   left: 0;
@@ -35,3 +36,183 @@
     }
   }
 }
+/*-------------------------- End Navbar -------------------------- */
+/*-------------------------- Start Dashboard Header -------------------------- */
+.dashboard header{
+  margin-top: 10px;
+  width: 100%;
+  padding: 6px 30px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  // -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  //         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  @include maxMob{
+    padding: 8px 10px;
+  };
+  @include maxDm{
+    position: relative;
+    z-index: 4;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  };
+  @include btDm{
+    padding: 10px 40px;
+  };
+  @include btSm{
+    padding: 8px 40px;
+    // padding-left: 0px;
+  };
+  .wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .rest-part{
+      display: flex;
+    }
+    .title-area{
+      display: flex;
+      align-items: center;
+    }
+  }
+  .heading{
+    font-weight: bold;
+    margin-bottom: 0px;
+    position: relative;
+    color: $mGray;
+    text-transform: uppercase;
+    font-size: 24px;
+    @include maxDm{
+      font-size: 18px;
+      text-align: center;
+    };
+    @include btSm{
+      font-size: 22px;
+    };
+    @include btDmLg{
+      font-size: 24px;
+    };
+  }
+  .media{
+    .image{
+        @include maxMob{
+          width: 40px;
+          height: 40px;
+        }
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        img{
+          width: 100%;
+        }
+        @include btLgXl{
+          width: 44px;
+          height: 44px;
+        }
+    }
+    .media-body{
+      margin: 10px 12px 0 0;
+      color: $mGray;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      h6{
+        margin-top: 4px;
+        margin-bottom: 5px;
+        margin-right: 20px;
+        @include maxMob{
+          // margin-right: 10px;
+          font-size: 14px;
+          margin-right: 8px;
+        };
+        @include btLgXl{
+          margin-right: 14px;
+        }
+      }
+      img{
+        @include maxMob{
+          width: 10px;
+        }
+      }
+    }
+  }
+  .deli{
+    display: block;
+    margin: 8px 25px 0 23px;
+    width: 2px;
+    height: 34px;
+    background-color: #ebebf2;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    @include maxMob{
+      margin: 8px 10px 0 9px;
+    };
+    @include btLgXl{
+      margin-top: 6px;
+    }
+  }
+  .icons{
+    ul{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0;
+      li{
+        padding-top: 10px;
+        display: block;
+        &:nth-of-type(2){
+          margin: 0 35px;
+          @include maxMob{
+            margin: 0 25px;
+          };
+          @include btLgXl{
+            margin: 0 25px;
+          }
+        }
+        &:last-of-type{
+          padding-top: 5px;
+          @include maxMob{
+            img{
+              padding-top: 5px;
+              width: 20px;
+            }
+          }
+          @include btLgXl{
+            img{
+              padding-top: 3px;
+              width: 22px;
+            }
+          }
+        }
+        @include maxMob{
+          img{
+            width: 16px;
+          }
+        };
+        @include btLgXl{
+          img{
+            width: 18px;
+          }
+        }
+      }
+    }
+  }
+  .dropdown-menu{
+    // display: block;
+    top: 35px !important;
+    transform: none !important;
+    left: auto !important;
+    right: -10px !important;
+    border-radius: 0;
+    font-size: 14px;
+    .dropdown-item:focus, .dropdown-item:hover{
+      background-color: $llGray;
+    }
+  }
+}
+/*-------------------------- End Dashboard Header -------------------------- */

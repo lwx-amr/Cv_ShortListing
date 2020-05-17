@@ -30,7 +30,7 @@ ul,li{
 }
 /* --------------------------- End Global ---------------------------------*/
 /* --------------------------- Start Framework ---------------------------------*/
-.btn.focus, 
+.btn.focus,
 .btn:focus{
     box-shadow: none;
 }
@@ -161,7 +161,6 @@ ul,li{
 .page-head{
   padding: 60px 0 100px;
   h1{
-    // font-family: 'lato';
     font-weight: 500;
     color: $main-fgray;
     padding-left: 30px;
@@ -170,4 +169,34 @@ ul,li{
     font-weight: 700;
   }
 }
-/* --------------------------- Start Framework ---------------------------------*/
+.main-page{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: $sideBar;
+  @include maxDm{
+    position: relative;
+  }
+  .menu-sidebar{
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .content-side{
+    min-height: 100vh;
+    background-color: #fff;
+    width: 100%;
+    @include maxDm{
+      &>div{
+        position: relative;
+        z-index: 5;
+      }
+    }
+  }
+  .page-content{
+    padding: 40px 0 ;
+    a:hover{
+      color: #fff;
+    }
+  }
+}
+/* -------------------------- End Global -----------------------------*/
