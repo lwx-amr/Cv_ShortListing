@@ -47,6 +47,12 @@ ul, li {
 
 /* --------------------------- End Global ---------------------------------*/
 /* --------------------------- Start Framework ---------------------------------*/
+.req-mark {
+  color: #FF3232;
+  position: relative;
+  top: 2px;
+}
+
 .btn.focus,
 .btn:focus {
   box-shadow: none;
@@ -61,7 +67,7 @@ ul, li {
 
 .btn-bBlue {
   background-color: #00ADB5;
-  color: #fff;
+  color: #fff !important;
 }
 .btn-bBlue:hover {
   color: #fff;
@@ -925,6 +931,17 @@ ul, li {
   padding: 8px 0 4px;
   margin-top: 14px;
 }
+.access .access-box .password {
+  position: relative;
+}
+.access .access-box .password .rp-eye {
+  color: #9FA2B4;
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  font-size: 20px;
+  cursor: pointer;
+}
 .access.signin .access-box {
   width: 320px;
   margin-bottom: 50px;
@@ -982,8 +999,43 @@ ul, li {
 .access.signin.verify .box-footer {
   margin: 10px 0;
 }
+.access.signin.wslist .access-box {
+  width: 400px;
+}
+.access.signin.wslist .box-body {
+  padding: 15px;
+}
+.access.signin.wslist .box-body .entry .entry-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2F2E41;
+  border-bottom: 1px solid #E1E1E1;
+  padding: 12px 5px;
+  transition: 0.2s all ease-in-out;
+}
+.access.signin.wslist .box-body .entry .entry-wrap:hover {
+  background-color: #E1E1E1;
+}
+.access.signin.wslist .box-body .entry .entry-wrap h6 {
+  margin-bottom: 0;
+}
+.access.signin.wslist .box-body .entry .entry-wrap span {
+  font-size: 20px;
+  color: #9FA2B4;
+}
+.access.signin.wslist .box-body .entry:last-of-type .entry-wrap {
+  border: 0;
+}
+.access.signin.wslist .btn {
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 8px 20px;
+}
 .access.signup .page-content {
-  padding-top: 60px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
 }
 .access.signup .access-box {
   background-color: #393E46;
@@ -1001,7 +1053,7 @@ ul, li {
 }
 .access.signup .access-box .right-box {
   background-color: #fff;
-  padding: 40px;
+  padding: 60px;
 }
 .access.signup .access-box .right-box .box-head {
   margin-bottom: 30px;
@@ -1034,8 +1086,45 @@ ul, li {
   margin: 0;
   font-size: 14px;
 }
+.access.verify .access-box {
+  background-color: transparent;
+  box-shadow: none;
+}
+.access.verify .access-box .inbox {
+  width: 140px;
+  margin: auto;
+}
 .access.verify a {
   width: 100%;
+}
+.access.newws .page-content {
+  display: block;
+}
+.access.newws .access-box {
+  background-color: #6a6a6a;
+  width: 860px;
+}
+.access.newws .access-box .right-box {
+  padding: 40px;
+}
+.access.newws .access-box .right-box .box-body {
+  padding: 0;
+}
+.access.newws .access-box .right-box .box-body label {
+  font-size: 16px;
+}
+.access.newws .access-box .right-box .box-body input:not(last-of-type) {
+  margin-bottom: 10px;
+}
+.access.newws .access-box .right-box .box-body input::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+}
+.access.newws .access-box .right-box .form-inputs {
+  padding-right: 40px;
+}
+.access.newws .access-box .box-footer {
+  padding: 0;
 }
 .access a {
   color: #0059AB;

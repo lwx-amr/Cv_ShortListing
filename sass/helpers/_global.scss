@@ -30,6 +30,11 @@ ul,li{
 }
 /* --------------------------- End Global ---------------------------------*/
 /* --------------------------- Start Framework ---------------------------------*/
+.req-mark{
+  color: $main-red;
+  position: relative;
+  top: 2px;
+}
 .btn.focus,
 .btn:focus{
     box-shadow: none;
@@ -42,7 +47,7 @@ ul,li{
 }
 .btn-bBlue{
   background-color: $babyBlue;
-  color: #fff;
+  color: #fff !important;
   &:hover{
       color: #fff;
   }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RankUP | Sign Up</title>
+    <title>Sign Up | RankUP</title>
 
     <!-- Style Files  -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -40,25 +40,31 @@
               <div class="box-body">
                 <form class="register-form" action="index.html" method="post">
                   <div class="form-inputs">
-                    <div class="form-group">
-                      <label for="name">Full Name</label>
-                      <input type="text" class="form-control" name="name" id="name" required>
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="fname">First Name <span class="req-mark">*</span></label>
+                          <input type="text" class="form-control" name="fname" id="fname" required>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="form-group">
+                          <label for="lname">Last Name <span class="req-mark">*</span></label>
+                          <input type="text" class="form-control" name="lname" id="lname" required>
+                        </div>
+                      </div>
                     </div>
                     <div class="form-group">
-                      <label for="comp-name">Company Name</label>
-                      <input type="text" class="form-control" name="comp-name" id="comp-name" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
+                      <label for="email">Email <span class="req-mark">*</span></label>
                       <input type="email" class="form-control" name="email" id="email" required>
                     </div>
-                    <div class="form-group">
-                      <label for="password">Password</label>
+                    <div class="form-group password">
+                      <label for="password">Password <span class="req-mark">*</span></label>
                       <input type="password" class="form-control" name="password" id="password" required>
+                      <span class="rp-eye js-ShowPass"></span>
                     </div>
-                    <div class="form-group check-box">
-                      <input type="checkbox" name="terms-agree" value="">
-                      <label>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    <div class="form-group">
+                      <label>By clicking below, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
                     </div>
                   </div>
                   <div class="box-footer">

@@ -73,6 +73,17 @@
       padding: 8px 0 4px;
       margin-top: 14px;
     }
+    .password{
+      position: relative;
+      .rp-eye{
+        color: $lGray;
+        position: absolute;
+        bottom: 7px;
+        right: 7px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
   }
   &.signin{
     .access-box{
@@ -134,15 +145,54 @@
         margin: 10px 0;
       }
     }
+    &.wslist{
+      .access-box{
+        width: 400px;
+      }
+      .box-body{
+        padding: 15px;
+        .entry{
+          .entry-wrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $dBlue;
+            border-bottom: 1px solid $llGray;
+            padding:12px 5px;
+            transition: 0.2s all ease-in-out;
+            &:hover{
+              background-color: $llGray;
+            }
+            h6{
+              margin-bottom: 0;
+            }
+            span{
+              font-size: 20px;
+              color: $lGray;
+            }
+          }
+          &:last-of-type{
+            .entry-wrap{
+              border: 0;
+            }
+          }
+        }
+      }
+      .btn{
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 8px 20px;
+      }
+    }
   }
   &.signup{
     .page-content{
-      padding-top: 60px;
+      padding: 0px;
+      display: flex;
+      align-items: center;
     }
     .access-box{
-      // margin: 40px auto 50px;
-      
-      background-color: #393E46;  
+      background-color: #393E46;
       width: 960px;
       .left-box{
         padding: 60px 25px 0;
@@ -156,7 +206,7 @@
       }
       .right-box{
         background-color: #fff;
-        padding: 40px;
+        padding: 60px;
         .box-head{
           margin-bottom: 30px;
           h5{
@@ -169,7 +219,7 @@
             margin-bottom: 5px;
             color: $mGray;
             font-weight: 600;
-          }  
+          }
           .check-box{
             input{
               margin-right: 10px;
@@ -194,8 +244,47 @@
     }
   }
   &.verify{
+    .access-box{
+      background-color: transparent;
+      box-shadow: none;
+      .inbox{
+        width: 140px;
+        margin: auto;
+      }
+    }
     a{
       width: 100%;
+    }
+  }
+  &.newws{
+    .page-content{
+      display: block;
+    }
+    .access-box{
+      background-color: $main-lGray;
+      width: 860px;
+      .right-box{
+        padding: 40px;
+        .box-body{
+          padding: 0;
+          label{
+            font-size: 16px;
+          }
+          input:not(last-of-type){
+            margin-bottom: 10px;
+          }
+          input::placeholder{
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+        .form-inputs{
+          padding-right:40px;
+        }
+      }
+      .box-footer{
+        padding: 0;
+      }
     }
   }
   a{

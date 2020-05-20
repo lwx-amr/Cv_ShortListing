@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'RankUP';
+  src:  url('fonts/RankUP.eot?8lys42');
+  src:  url('fonts/RankUP.eot?8lys42#iefix') format('embedded-opentype'),
+    url('fonts/RankUP.ttf?8lys42') format('truetype'),
+    url('fonts/RankUP.woff?8lys42') format('woff'),
+    url('fonts/RankUP.svg?8lys42#RankUP') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="rp-"], [class*=" rp-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'RankUP' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rp-plus-square:before {
+  content: "\e90e";
+}
+.rp-settings:before {
+  content: "\e905";
+  color: #a5a4bf;
+}
+.rp-increase:before {
+  content: "\e906";
+  color: #3cc480;
+}
+.rp-inbox:before {
+  content: "\e907";
+  color: #a5a4bf;
+}
+.rp-help:before {
+  content: "\e908";
+  color: #bcbccb;
+}
+.rp-dashboard:before {
+  content: "\e909";
+  color: #3ebdeb;
+}
+.rp-billing:before {
+  content: "\e90a";
+  color: #a5a4bf;
+}
+.rp-acquiredfilms:before {
+  content: "\e90b";
+  color: #a5a4bf;
+}
+.rp-eye-off:before {
+  content: "\e90c";
+}
+.rp-eye:before {
+  content: "\e90d";
+}
+.rp-chevron-right:before {
+  content: "\e901";
+}
+.rp-chevron-left:before {
+  content: "\e902";
+}
+.rp-chevron-down:before {
+  content: "\e903";
+}
+.rp-chevron-up:before {
+  content: "\e904";
+}
+.rp-search:before {
+  content: "\e900";
+}
