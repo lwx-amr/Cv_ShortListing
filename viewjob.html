@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Software Engineer | WorkspaceName</title>
+
+    <!-- Style Files  -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="icons/font.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="fonts/font-face.css">
+    <link rel="stylesheet" href="icons/style.css">
+
+  </head>
+  <body class="dashboard">
+
+
+    <!-- Start Main Page -->
+    <div class="main-page dashboard viewjob">
+
+      <!-- Start Menu -->
+      <span class="show-sidebar"><img src="icons/select-arrow.svg" alt=""></span>
+      <div class="menu-sidebar">
+        <div class="menu-sidebar__content">
+          <div class="logo text-center">
+            <img src="images/white-logo.svg" alt="">
+          </div>
+          <nav class="navbar-sidebars">
+            <ul class="list-unstyled navbar__list">
+              <li>
+                <a href="#">
+                  <img src="icons/dashboard.svg" alt="">
+                  <span>Overview</span>
+                </a>
+              </li>
+              <li class="active">
+                <a href="profile.html">
+                  <img src="icons/acquiredfilms.svg" alt="">
+                  <span>Jobs</span>
+                </a>
+              </li>
+              <li>
+                <a href="purchases.html">
+                  <img src="icons/inbox.svg" alt="">
+                  <span>Inbox</span>
+                </a>
+              </li>
+              <li>
+                <a href="help.html">
+                  <img src="icons/billing.svg" alt="">
+                  <span>Billing</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <img src="icons/help.svg" alt="">
+                  <span>Help Center</span>
+                </a>
+              </li>
+              <li>
+                <a href="profile.html">
+                  <img src="icons/settings.svg" alt="">
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- End Menu -->
+
+      <!-- Start Right Side -->
+      <div class="content-side clearfix">
+
+        <!-- Start Header -->
+        <header>
+          <div class="wrapper">
+            <div class="title-area">
+              <h1 class="heading">Jobs</h1>
+            </div>
+            <div class="rest-part">
+              <div class="icons">
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#">
+                      <img src="icons/notifications.svg" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <span class="deli"></span>
+              <div class="media">
+                <div class="media-body">
+                  <h6>John Doe</h6>
+                  <div class="dropdown">
+                    <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="icons/down-arrow.svg" alt="">
+                    </span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="image">
+                  <img src="images/profiles/2.jpg" alt="" class="rounded-circle">
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Start Content -->
+        <div class="page-content">
+          <div class="container no-padding">
+            <div class="jobs-details">
+              <div class="jobs-head">
+                <div class="title">
+                  <h3>Software Engineer</h3>
+                  <span>May 25, 2020</span>
+                </div>
+                <div class="state">
+                  <span class="active">active</span>
+                  <div class="more">
+                    <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="icons/more-vertical.svg" alt="">
+                    </span>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <button class="dropdown-item" data-toggle="modal" data-target="#editJob">Edit job</button>
+                      <button class="dropdown-item" data-toggle="modal" data-target="#confirmModal">Delete job</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="applicants">
+                <h5>Number of applicants: <span>205</span></h5>
+              </div>
+              <div class="description">
+                <h4>Description</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+            <div class="next-action">
+              <a href="#" class="btn btn-bBlue">Close and Start Ranking</a>
+            </div>
+          </div>
+        </div>
+        <!-- End Content -->
+
+      </div>
+      <!-- End Right Side -->
+
+    </div>
+    <!-- End Main Page -->
+
+
+    <!-- Confirm Modal -->
+    <div class="modal fade confirm" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmModalLabel">Please confirm the following action</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>This action will delete this job with all its data</p>
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-delete" href="/job/delete/">Delete</a>
+            <button type="button" class="btn btn-close" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Confirm Modal -->
+
+    <!-- Edit Modal -->
+    <div class="modal fade edit" id="editJob" tabindex="-1" role="dialog" aria-labelledby="editJobLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title" id="editJobLabel">Edit job</h6>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="index.html" method="post" id="edit-video-form">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="title">Job title</label>
+                    <input type="text" name="title" id="title" class="form-control req-input" value="Software Engineer" required>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-group">
+                    <label for="state">Job status</label>
+                    <select class="form-control" name="state" id="state" required>
+                      <option value="active">Active</option>
+                      <option value="hold">Hold</option>
+                      <option value="closed">Closed</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="8"class="form-control req-input">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </textarea>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-save" href="/job/delete/">Save</a>
+            <button type="button" class="btn btn-close" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit Modal -->
+
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

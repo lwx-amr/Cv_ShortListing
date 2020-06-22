@@ -28,6 +28,11 @@ a:focus {
   text-decoration: none;
 }
 
+button:focus {
+  outline: 0;
+  background-color: transparent;
+}
+
 section {
   padding: 100px 0;
 }
@@ -73,8 +78,58 @@ ul, li {
   color: #fff;
 }
 
+.btn-close {
+  color: #252733;
+  background-color: #E1E1E1;
+}
+.btn-close:hover {
+  color: #252733;
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #FF3232;
+}
+.btn-delete:hover {
+  color: #fff;
+}
+
+.btn-save {
+  color: #fff;
+  background-color: #00ADB5;
+}
+.btn-save:hover {
+  color: #fff;
+}
+
 .page-content {
   position: relative;
+}
+
+.dashboard .page-content {
+  margin: 0 30px;
+}
+
+.state > span {
+  display: inline-block;
+  min-width: 90px;
+  padding: 7px 0px;
+  text-align: center;
+  color: #fff !important;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.state > span.active {
+  background-color: #03BF66;
+}
+.state > span.hold {
+  background-color: #FEC400;
+}
+.state > span.closed {
+  background-color: #363740;
 }
 
 .table {
@@ -224,7 +279,7 @@ ul, li {
 }
 .main-page .content-side {
   min-height: 100vh;
-  background-color: #fff;
+  background-color: #F7F8FC;
   width: 100%;
 }
 @media (max-width: 991px) {
@@ -282,7 +337,7 @@ ul, li {
   margin-top: 10px;
   width: 100%;
   padding: 6px 30px;
-  background-color: #fff;
+  background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,7 +386,7 @@ ul, li {
   margin-bottom: 0px;
   position: relative;
   color: #252733;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 24px;
 }
 @media (max-width: 991px) {
@@ -859,6 +914,105 @@ ul, li {
 }
 
 /*---------------------------------- End SideBar --------------------------------*/
+.modal .modal-content {
+  border: 0;
+}
+.modal .modal-body {
+  font-weight: 500;
+  font-size: 14px;
+  color: #707070;
+}
+.modal .modal-title {
+  font-size: 18px;
+}
+.modal .modal-footer .btn {
+  font-size: 14px;
+  padding: 7px 20px;
+  border-radius: 8px;
+}
+.modal.edit .modal-dialog {
+  max-width: 800px;
+}
+
+.main-footer {
+  padding: 100px 0 40px;
+  background-color: #2F2E41;
+}
+.main-footer p {
+  font-weight: 600;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* ---------------------------- Start Dashboard ---------------------------- */
+.dashboard .jobs-display {
+  margin-top: 15px;
+  background-color: #fff;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  padding: 20px 0 0;
+}
+.dashboard .jobs-display .head {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22px;
+  margin-bottom: 20px;
+}
+.dashboard .jobs-display .head h5 {
+  font-weight: 700;
+}
+.dashboard .jobs-display .head a {
+  color: #252733;
+  font-weight: 600;
+}
+.dashboard .jobs-display .table {
+  margin-bottom: 0;
+}
+.dashboard .jobs-display .table th, .dashboard .jobs-display .table td {
+  padding-left: 30px;
+}
+.dashboard .jobs-display .table thead tr {
+  border-bottom: 2px solid #E1E1E1;
+}
+.dashboard .jobs-display .table tbody tr {
+  border-bottom: 1px solid #E1E1E1;
+  cursor: pointer;
+}
+.dashboard .jobs-display .table tbody tr:last-of-type {
+  border-bottom: 0;
+}
+.dashboard .jobs-display .table tbody tr:hover {
+  background-color: #F9F9F9;
+}
+.dashboard .jobs-display .table tbody td, .dashboard .jobs-display .table tbody th {
+  font-weight: 500;
+  padding: 22px 30px 20px;
+}
+.dashboard .jobs-display .table tbody td span, .dashboard .jobs-display .table tbody th span {
+  font-size: 14px;
+  color: #9FA2B4;
+}
+.dashboard .jobs-display .table tbody td h6, .dashboard .jobs-display .table tbody th h6 {
+  margin-bottom: 4px;
+}
+.dashboard .addnewjob {
+  text-align: right;
+  margin-top: 52px;
+}
+.dashboard .addnewjob a {
+  font-weight: 600;
+  color: #2F2E41;
+}
+.dashboard .addnewjob a:hover {
+  color: #2F2E41;
+}
+.dashboard .addnewjob a span {
+  font-size: 22px;
+  position: relative;
+  top: 3px;
+}
+
+/* ---------------------------- End Dashboard ---------------------------- */
 /* ------------------------------- Start Access ------------------------------- */
 .access .page-content {
   background-color: #F9F9F9;
@@ -1284,10 +1438,129 @@ ul, li {
   }
 }
 /* ---------------------------- Start Home ----------------------------*/
-.dashboard .page-content {
+.overview .page-content {
   margin: 0 30px;
 }
-
+.overview .states {
+  display: flex;
+  justify-content: space-between;
+}
+.overview .states .element {
+  border: 1px solid #E1E1E1;
+  width: 230px;
+  padding: 24px 0;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+}
+.overview .states .element h4 {
+  color: #707070;
+}
 /* ---------------------------- End Home ----------------------------*/
+/* ----------------------------- Start Jobs -------------------------------*/
+.viewjob .page-content, .newjob .page-content {
+  padding: 70px;
+}
+.viewjob .next-action, .newjob .next-action {
+  margin: 100px 0 40px;
+  text-align: center;
+}
+.viewjob .next-action .btn, .newjob .next-action .btn {
+  font-size: 18px;
+}
+
+.viewjob .page-content .jobs-details .jobs-head {
+  display: flex;
+  justify-content: space-between;
+}
+.viewjob .page-content .jobs-details .jobs-head .title h3 {
+  font-weight: bold;
+}
+.viewjob .page-content .jobs-details .jobs-head .title span {
+  font-size: 14px;
+  color: #707070;
+  font-weight: 500;
+}
+.viewjob .page-content .jobs-details .jobs-head .state {
+  padding-right: 40px;
+  position: relative;
+}
+.viewjob .page-content .jobs-details .jobs-head .state .more {
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+.viewjob .page-content .jobs-details .jobs-head .state .more img {
+  cursor: pointer;
+}
+.viewjob .page-content .jobs-details .jobs-head .state .more .dropdown-menu {
+  top: 20px !important;
+  left: auto !important;
+  right: -10px !important;
+  min-width: 100px;
+}
+.viewjob .page-content .jobs-details .jobs-head .state .more .dropdown-menu .dropdown-item {
+  font-size: 14px;
+  font-weight: 500;
+}
+.viewjob .page-content .jobs-details .jobs-head .state .more .dropdown-menu .dropdown-item:hover {
+  color: #252733;
+}
+.viewjob .page-content .jobs-details .jobs-head .state .more .dropdown-menu .dropdown-item.active, .viewjob .page-content .jobs-details .jobs-head .state .more .dropdown-menu .dropdown-item:active {
+  background-color: transparent;
+}
+.viewjob .page-content .jobs-details .applicants {
+  margin-top: 40px;
+}
+.viewjob .page-content .jobs-details .applicants h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.viewjob .page-content .jobs-details .applicants h5 span {
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: 500;
+  color: #00ADB5;
+}
+.viewjob .page-content .jobs-details .description {
+  margin-top: 40px;
+  padding-right: 100px;
+}
+.viewjob .page-content .jobs-details .description h4 {
+  color: #252733;
+}
+.viewjob .page-content .jobs-details .description p {
+  color: #505050;
+}
+
+.newjob .title {
+  margin-bottom: 20px;
+}
+
+.allwsjobs .addnewjob {
+  margin-top: 20px;
+}
+.allwsjobs .pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 30px 20px 0px;
+}
+.allwsjobs .pagination .tools {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  color: #707070;
+}
+.allwsjobs .pagination .tools span {
+  font-size: 20px;
+  font-weight: 300;
+}
+.allwsjobs .pagination .tools .num span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ----------------------------- End Jobs -------------------------------*/
 
 /*# sourceMappingURL=master.css.map */

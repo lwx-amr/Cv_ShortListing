@@ -10,6 +10,10 @@ a:hover,
 a:focus{
   text-decoration: none;
 }
+button:focus{
+  outline: 0;
+  background-color: transparent;
+}
 section{
   padding:100px 0;
   .section-head{
@@ -52,8 +56,57 @@ ul,li{
       color: #fff;
   }
 }
+.btn-close{
+  color: $mGray;
+  background-color: $llGray;
+  &:hover{
+    color: $mGray
+  }
+}
+.btn-delete{
+  color: #fff;
+  background-color: $main-red;
+  &:hover{
+    color: #fff;
+  }
+}
+.btn-save{
+  color: #fff;
+  background-color: $babyBlue;
+  &:hover{
+    color: #fff;
+  }
+}
 .page-content{
   position: relative;
+}
+.dashboard{
+  .page-content{
+    margin: 0 30px;
+  }
+}
+.state{
+  & > span{
+    display: inline-block;
+    min-width: 90px;
+    padding: 7px 0px;
+    text-align: center;
+    color: #fff !important;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    &.active{
+      background-color: $active;
+    }
+    &.hold{
+      background-color: $hold;
+    }
+    &.closed{
+      background-color: $closed;
+    }
+  }
 }
 .table{
   display: table;
@@ -188,7 +241,7 @@ ul,li{
   }
   .content-side{
     min-height: 100vh;
-    background-color: #fff;
+    background-color: #F7F8FC;
     width: 100%;
     @include maxDm{
       &>div{

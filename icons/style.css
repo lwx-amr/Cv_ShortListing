@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'RankUP';
-  src:  url('fonts/RankUP.eot?8lys42');
-  src:  url('fonts/RankUP.eot?8lys42#iefix') format('embedded-opentype'),
-    url('fonts/RankUP.ttf?8lys42') format('truetype'),
-    url('fonts/RankUP.woff?8lys42') format('woff'),
-    url('fonts/RankUP.svg?8lys42#RankUP') format('svg');
+  src:  url('fonts/RankUP.eot?bvbv4c');
+  src:  url('fonts/RankUP.eot?bvbv4c#iefix') format('embedded-opentype'),
+    url('fonts/RankUP.ttf?bvbv4c') format('truetype'),
+    url('fonts/RankUP.woff?bvbv4c') format('woff'),
+    url('fonts/RankUP.svg?bvbv4c#RankUP') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,7 +13,7 @@
 [class^="rp-"], [class*=" rp-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'RankUP' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -25,6 +25,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.rp-more-vertical:before {
+  content: "\e914";
+}
+.rp-check-circle:before {
+  content: "\e90f";
+}
+.rp-check:before {
+  content: "\e910";
+}
+.rp-trash-2:before {
+  content: "\e911";
+}
+.rp-check-square:before {
+  content: "\e912";
+}
+.rp-edit-2:before {
+  content: "\e913";
+}
 .rp-plus-square:before {
   content: "\e90e";
 }
@@ -52,7 +70,7 @@
   content: "\e90a";
   color: #a5a4bf;
 }
-.rp-acquiredfilms:before {
+.rp-jobs:before {
   content: "\e90b";
   color: #a5a4bf;
 }
