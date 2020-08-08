@@ -1,15 +1,68 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import validate from 'validator';
+import {signup} from './../../Utils/APICalls';
 
 export default class Signup extends Component {
     state = {
+        firstName: '',
+        secondName: '',
         email: '',
         password: '',
-        invalidEmail: false,
-        emptyPassword: false,
-        registerFailed: false,
         errMsg: ''
     }
+    handelChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+    validate = () => {
+        let invalid = false
+        if (this.state.firstName.trim() === '') {
+            invalid = "Empty First Name"
+        } 
+        else if (this.state.secondName.trim() === '') {
+            invalid = "Empty Second Name"
+        }
+        else if (!validate.isEmail(this.state.email)) {
+            invalid = "Invalid Email"
+        }
+        else if (this.state.password.trim() === "") {
+            invalid = "Empty Password"
+        }
+        return invalid
+    }
+    handleSubmit = () => {
+        const invalidField = this.validate()
+        if (invalidField) {
+            this.setState({
+                errMsg: invalidField
+            });
+        }
+        else {
+            signup(this.state.firstName, this.state.secondName, this.state.email, this.state.password)
+                .then(user => {
+                    this.props.history.push('/email-confirmation');
+                })
+                .catch(error => {
+                    let err
+                    if (error.data.errmsg) {
+                        err = error.data.errmsg
+                    }
+                    else if (error.data.errors.password) {
+                        err = "Invalid Password, must be atleast 8 letters."
+                    }
+                    else {
+                        err = error.data.message
+                    }
+                    this.setState({
+                        signupFailed: true,
+                        errMessage: err
+                    })
+                })
+        }
+    }
+
     render() {
         return (
             <div className="access signup">
@@ -32,29 +85,29 @@ export default class Signup extends Component {
                                     <h5>Welcome to Rank UP, Setup your profile</h5>
                                 </div>
                                 <div className="box-body">
-                                    <form className="register-form" action="index.html" method="post">
+                                    <form className="register-form">
                                     <div className="form-inputs">
                                         <div className="row">
                                             <div className="col-6">
                                                 <div className="form-group">
                                                 <label htmlFor="fname">First Name <span className="req-mark">*</span></label>
-                                                <input type="text" className="form-control" name="fname" id="fname" required />
+                                                <input type="text" className="form-control" name="firstName" id="firstName" required onChange={this.handelChange} />
                                                 </div>
                                             </div>
                                             <div className="col-6">
                                                 <div className="form-group">
                                                 <label htmlFor="lname">Last Name <span className="req-mark">*</span></label>
-                                                <input type="text" className="form-control" name="lname" id="lname" required />
+                                                <input type="text" className="form-control" name="secondName" id="secondName" required onChange={this.handelChange}/>
                                                 </div>
                                             </div>
                                             </div>
                                             <div className="form-group">
                                             <label htmlFor="email">Email <span className="req-mark">*</span></label>
-                                            <input type="email" className="form-control" name="email" id="email" required />
+                                            <input type="email" className="form-control" name="email" id="email" required onChange={this.handelChange}/>
                                             </div>
                                             <div className="form-group password">
                                             <label htmlFor="password">Password <span className="req-mark">*</span></label>
-                                            <input type="password" className="form-control" name="password" id="password" required />
+                                            <input type="password" className="form-control" name="password" id="password" required onChange={this.handelChange}/>
                                             <span className="rp-eye js-ShowPass" />
                                             </div>
                                             <div className="form-group">
@@ -62,7 +115,7 @@ export default class Signup extends Component {
                                             </div>
                                         </div>
                                         <div className="box-footer">
-                                            <input type="submit" defaultValue="Create account" className="btn btn-bBlue" />
+                                            <button type="button" className="btn btn-bBlue" onClick={this.handleSubmit}>Create account</button>
                                             <p>Already have account? <Link to="/login">Login</Link></p>
                                         </div>
                                     </form>

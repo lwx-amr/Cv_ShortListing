@@ -11,11 +11,48 @@ import PSForget from "./auth/PSForget";
 import EmailConfirm from "./auth/EmailConfirm";
 import ResetSent from "./auth/ResetSent";
 
+// API Calls
+import { init, signout} from './../Utils/APICalls';
 
 class App extends Component {
   state = {
-    loggedInUser: false
+    init: true,
+    loggedInUser: '',
+    token: ''
+  };
+
+  componentDidMount() {
+    init()
+      .then(user => {
+        this.handleLogin(user)
+      })
+      .catch(error => {
+        this.setState({
+          init: false
+        })
+      })
+  };
+
+  handleLogin = (user) => {
+    this.setState({
+      loggedInUser: user,
+      init: false
+    });
   }
+
+  handleSignout = () => {
+    signout()
+      .then(user => {
+        this.setState({
+          loggedInUser: '',
+          token: '',
+        });
+      })
+      .catch(error => {
+        this.setState({ errMessage: error })
+      })
+  }
+
   render(){
     return (
       <BrowserRouter>
@@ -23,7 +60,10 @@ class App extends Component {
         {(!this.state.loggedInUser)? 
           <Switch>
             <Route exact path="/" component={Home}/>
-            <Route path="/login" component={Login} />
+            <Route 
+              path="/login" 
+              component={() => <Login login={this.handleLogin} />}  
+            />
             <Route path="/Signup" component={Signup} />
             <Route path="/forget-password" component={PSForget} />
             <Route path="/email-confirmation" component={EmailConfirm} />
