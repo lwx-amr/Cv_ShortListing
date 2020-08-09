@@ -1,0 +1,38 @@
+import axios from 'axios'
+
+const axiosInstance = axios.create({
+    baseURL: 'http://localhost:3004/api/v1/jobs',
+    withCredentials: true,
+});
+axiosInstance.interceptors.response.use(
+    res => {
+        return res;
+    },
+    error => {
+        return Promise.reject(error.response)
+    }
+);
+
+export const getJobsStates = (id) => {
+    return axiosInstance.get('/states/'+id).then(user => {
+        return user.data
+    })
+}
+
+export const getHrJobs = (id) => {
+    return axiosInstance.get('/hr/'+id).then(user => {
+        return user.data
+    })
+}
+
+export const getJob = (id) => {
+    return axiosInstance.get('/job/'+id).then(user => {
+        return user.data
+    })
+}
+
+export const deleteJob = (id) => {
+    return axiosInstance.delete('/job/'+id).then(user => {
+        return user.data
+    })
+}

@@ -992,8 +992,9 @@ ul, li {
   font-size: 14px;
   color: #9FA2B4;
 }
-.dashboard .jobs-display .table tbody td h6, .dashboard .jobs-display .table tbody th h6 {
+.dashboard .jobs-display .table tbody td h6, .dashboard .jobs-display .table tbody th a h6 {
   margin-bottom: 4px;
+  color: #333333;
 }
 .dashboard .addnewjob {
   text-align: right;

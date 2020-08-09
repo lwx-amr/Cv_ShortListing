@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import validate from 'validator';
-import {signup} from './../../Utils/APICalls';
+import {signup} from './../../Utils/authCalls';
 
 export default class Signup extends Component {
     state = {

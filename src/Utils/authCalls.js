@@ -45,10 +45,3 @@ export const signup = (firstName, lastName, email, password) => {
         return user.data
     });
 }
-
-/*module.exports = {
-    init, 
-    signout,
-    signup,
-    login
-}*/
