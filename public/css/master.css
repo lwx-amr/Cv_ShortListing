@@ -345,6 +345,10 @@ ul, li {
   -ms-flex-pack: end;
   justify-content: flex-end;
 }
+.dashboard .tap-title{
+  font-weight: 600;
+  margin-bottom: 20px;
+}
 @media (max-width: 575px) {
   .dashboard header {
     padding: 8px 10px;

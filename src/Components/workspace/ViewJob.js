@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
+import {Link} from "react-router-dom";
+
 import {getJob} from "./../../Utils/jobsCalls";
 
 export default class ViewJob extends Component {
   state = {
     jobID : '',
-    name: '',
+    title: '',
     date: '',
     stat: '',
     numOfApplicants: '',
@@ -20,7 +22,6 @@ export default class ViewJob extends Component {
       <div className="main-page dashboard">
         <div className="viewjob">
           <div className="content-side clearfix">
-            {/* Start Content */}
             <div className="page-content">
               <div className="container no-padding">
                 <div className="jobs-details">
@@ -51,7 +52,7 @@ export default class ViewJob extends Component {
                   </div>
                 </div>
                 <div className="next-action">
-                  <a href="#" className="btn btn-bBlue">Close and Start Ranking</a>
+                  <Link href={"/job-rank/"+this.state.jobID} className="btn btn-bBlue">Close and Start Ranking</Link>
                 </div>
               </div>
             </div>
@@ -124,7 +125,6 @@ export default class ViewJob extends Component {
             </div>
           </div>
         </div>
-      
       </div>
     )
   }

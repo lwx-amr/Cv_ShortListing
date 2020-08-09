@@ -42,7 +42,7 @@ export default class Signup extends Component {
         else {
             signup(this.state.firstName, this.state.secondName, this.state.email, this.state.password)
                 .then(user => {
-                    this.props.history.push('/email-confirmation');
+                    this.props.history.push('/login');
                 })
                 .catch(error => {
                     let err

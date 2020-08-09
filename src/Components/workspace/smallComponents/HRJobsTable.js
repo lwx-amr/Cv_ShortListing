@@ -48,7 +48,7 @@ class HRJobsTable extends Component {
       <div className="jobs-display">
         <div className="head">
           <h5>Your jobs</h5>
-          <Link to={this.props.match.url+"/all-jobs"}>See all</Link>
+          <Link to={this.props.match.url+"/jobs"}>See all</Link>
         </div>
         <div className="jobs-table">
           <table className="table table-borderless">

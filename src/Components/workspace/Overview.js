@@ -12,6 +12,7 @@ class Overview extends Component {
   render() {
     return (
       <div className="component-wrapper">
+        <h3 className="tap-title">Overview</h3>
         {<JobsStates wsID ={this.state.wsID}/>}
         <div className="addnewjob">
           <Link to={this.props.match.url+"/new-job"}><span className="rp-plus-square"/> New Job</Link>

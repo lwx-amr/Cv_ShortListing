@@ -30,3 +30,9 @@ export const createWorkSpace = (name, emails, ownerID) => {
         return false;
     });
 }
+
+export const getWorkSpace = (id) => {
+    return axiosInstance.get('/'+id).then(user => {
+        return user.data
+    })
+}

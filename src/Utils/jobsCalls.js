@@ -36,3 +36,15 @@ export const deleteJob = (id) => {
         return user.data
     })
 }
+
+export const getWSJobs = (id) => {
+    return axiosInstance.get('/ws/'+id).then(user => {
+        return user.data
+    })
+}
+
+export const addNewJob = (jobObj) => {
+    return axiosInstance.post('/',jobObj).then(user => {
+        return user.data
+    })
+}

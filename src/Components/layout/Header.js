@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
 
+import { Link } from "react-router-dom";
+
+import {getWorkSpace} from "../../Utils/workSpaceCalls";
+
 export default class Header extends Component {
   state = {
-    name: this.props.name
+    name: this.props.name,
+    wsName: this.props.wsName,
+    wsID: this.props.wsID
+  }
+  componentDidMount(){
+    getWorkSpace(this.state.wsID)
+      .then(ws => {
+        this.setState({
+          wsName: ws.name,
+        })
+      });
   }
   render() {
     return (
       <header>
         <div className="wrapper">
           <div className="title-area">
-            <h1 className="heading">Overview</h1>
+            <h1 className="heading">{this.state.wsName}</h1>
           </div>
           <div className="rest-part">
             <div className="icons">
@@ -30,14 +44,12 @@ export default class Header extends Component {
                     <img src="/icons/down-arrow.svg" alt="" />
                   </span>
                   <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" href="#">Action</a>
-                    <a className="dropdown-item" href="#">Another action</a>
-                    <a className="dropdown-item" href="#">Something else here</a>
+                    <Link className="dropdown-item" to="/logout">Logout</Link>
                   </div>
                 </div>
               </div>
               <div className="image">
-                <img src="/images/profiles/2.jpg" alt="" className="rounded-circle" />
+                <img src="/images/profiles/21294.png" alt="" className="rounded-circle" />
               </div>
             </div>
           </div>

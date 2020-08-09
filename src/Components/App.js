@@ -10,45 +10,47 @@ import Signup from "./auth/Signup";
 import PSForget from "./auth/PSForget";
 import EmailConfirm from "./auth/EmailConfirm";
 import ResetSent from "./auth/ResetSent";
+import Logout from "./auth/Logout";
 
 // Auth Calls
 import {init, signout } from './../Utils/authCalls';
 
 class App extends Component {
   state = {
-    init: true,
     loggedInUser: '',
-    token: ''
   };
 
   componentDidMount() {
     init()
       .then(user => {
-        this.handleLogin(user)
+        let flag = 1;
+        if(this.props.location.pathname.includes("workspace"))
+          flag = 0;
+        this.handleLogin(user, flag);
       })
       .catch(error => {
-        this.setState({
-          init: false
-        })
+        if(this.props.location.pathname !== '/' && this.props.location.pathname !== '/signup')
+          this.props.history.push('/login');
       })
   };
 
-  handleLogin = (user) => {
+  handleLogin = (user, flag = 1) => {
     let userID = user.user._id;
     this.setState({
       loggedInUser: user,
-      init: false
     });
-    // this.props.history.push('/ws-list/'+userID);
+    if(flag)
+      this.props.history.push('/ws-list/'+userID);
   }
 
   handleSignout = () => {
     signout()
       .then(user => {
         this.setState({
-          loggedInUser: '',
-          token: '',
+          loggedInUser: ''
         });
+        console.log('here');
+        this.props.history.push('/');
       })
       .catch(error => {
         this.setState({ errMessage: error })
@@ -70,7 +72,15 @@ class App extends Component {
           <Route path="/email-confirmation" component={EmailConfirm} />
           <Route path="/reset-email-sent" component={ResetSent} />
         </Switch> 
-      ) : ( <AfterLogin user={this.state.loggedInUser} /> )}
+      ) : ( 
+        <Switch>
+          <Route
+            exact path="/logout" 
+            component={() => <Logout fun={this.handleSignout} />}  
+          />
+          <AfterLogin user={this.state.loggedInUser}  /> 
+        </Switch>        
+      )}
       </div>
     );
   }

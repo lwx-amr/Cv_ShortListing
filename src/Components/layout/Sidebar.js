@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
-import { NavLink, withRouter} from "react-router-dom";
+import { NavLink, withRouter, Link} from "react-router-dom";
 
 class Sidebar extends Component {
-  state = {
-    url: ''
-  }
-  componentDidMount(){
-    /*this.setState({
-      url: this.props.location.pathname
-    })*/
-  }
   render() {
     return (
       <div className="side-cont">
@@ -21,7 +13,7 @@ class Sidebar extends Component {
             </div>
             <nav className="navbar-sidebars">
               <ul className="list-unstyled navbar__list">
-                <li className="active">
+                <li>
                   <NavLink to={this.props.match.url}>
                     <img src="/icons/dashboard.svg" alt="" />
                     <span>Overview</span>
