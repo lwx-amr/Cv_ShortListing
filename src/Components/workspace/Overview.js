@@ -17,7 +17,7 @@ class Overview extends Component {
         <div className="addnewjob">
           <Link to={this.props.match.url+"/new-job"}><span className="rp-plus-square"/> New Job</Link>
         </div>
-        {<HRJobsTable hrID={this.state.hrID}/>}
+        {<HRJobsTable hrID={this.state.hrID} wsID={this.state.wsID}/>}
       </div>
     )
   }

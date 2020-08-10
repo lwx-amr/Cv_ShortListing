@@ -14,6 +14,7 @@ export default class WSList extends Component {
                 this.setState({
                     wpList: data
                 });
+                console.log(this.state);
             })
             .catch(err => {
                 console.log('WorkSpaces not found')

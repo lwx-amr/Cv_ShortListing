@@ -6,11 +6,10 @@ import {getHrJobs} from "./../../../Utils/jobsCalls";
 
 class HRJobsTable extends Component {
   state = {
-    hrID: this.props.hrID,
     jobs: []
   }
   componentDidMount () {
-    getHrJobs(this.state.hrID)
+    getHrJobs(this.props.hrID, this.props.wsID)
       .then(jobs => this.setState({jobs}));
   }
   render() {

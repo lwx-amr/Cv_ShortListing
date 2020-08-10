@@ -19,8 +19,8 @@ export const getJobsStates = (id) => {
     })
 }
 
-export const getHrJobs = (id) => {
-    return axiosInstance.get('/hr/'+id).then(user => {
+export const getHrJobs = (id, wsID) => {
+    return axiosInstance.get('/hr/'+id+'/'+wsID).then(user => {
         return user.data
     })
 }
@@ -45,6 +45,12 @@ export const getWSJobs = (id) => {
 
 export const addNewJob = (jobObj) => {
     return axiosInstance.post('/',jobObj).then(user => {
+        return user.data
+    })
+}
+
+export const updateJob = (jobObj) => {
+    return axiosInstance.post('/job',jobObj).then(user => {
         return user.data
     })
 }

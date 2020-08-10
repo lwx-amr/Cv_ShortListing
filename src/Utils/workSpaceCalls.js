@@ -36,3 +36,15 @@ export const getWorkSpace = (id) => {
         return user.data
     })
 }
+
+export const changeWorkSpaceName = (name, id) => {
+    return axiosInstance.post('/'+id,{name}).then(user => {
+        return user.data
+    })
+}
+
+export const deleteUser = (userID, wsID) => {
+    return axiosInstance.post(`/users/${wsID}/${userID}`).then(user => {
+        return user.data
+    })
+}

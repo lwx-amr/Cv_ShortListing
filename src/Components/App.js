@@ -49,7 +49,6 @@ class App extends Component {
         this.setState({
           loggedInUser: ''
         });
-        console.log('here');
         this.props.history.push('/');
       })
       .catch(error => {

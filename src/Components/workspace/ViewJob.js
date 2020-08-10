@@ -1,64 +1,71 @@
 import React, { Component } from 'react'
 
-import {Link} from "react-router-dom";
+import {Switch, Route, withRouter} from "react-router-dom";
 
-import {getJob} from "./../../Utils/jobsCalls";
+import {getJob, deleteJob, updateJob} from "./../../Utils/jobsCalls";
 
-export default class ViewJob extends Component {
+import JobDisplay from './smallComponents/JobDisplay';
+import JobRanked from "./JobRanked";
+
+class ViewJob extends Component {
   state = {
-    jobID : '',
-    title: '',
-    date: '',
-    stat: '',
-    numOfApplicants: '',
-    description: '',
-    skills: ''
+    job: ''
   }
   componentDidMount(){
-    console.log(this.props);
+    getJob(this.props.match.params.jobID)
+      .then(data => {
+        this.setState({job:data});
+      });
   }
+  handleDelete = () => {
+    deleteJob(this.state.job._id)
+      .then(data => this.props.history.push('/workspace/'+this.state.job.wsID));
+  }
+  handleUpdate = (flag = 0) => {
+    updateJob(this.state.job)
+      .then(data => this.props.history.push(this.props.match.url));
+  }
+  handleChange = (e) => {
+    let newJob = this.state.job;
+    newJob[e.target.id] = e.target.value;
+    this.setState({job: newJob});
+  }
+  handleRank = async(e) => {
+    let newJob = this.state.job;
+    newJob['stat'] = 'closed';
+    this.setState({job: newJob});
+    updateJob(this.state.job)
+      .then(data => this.props.history.push(this.props.match.url+'/ranking'));
+  } 
   render() {
+    const job = this.state.job;
+    const states = ['active', 'hold', 'closed'];
+    const statesOptions = states.map(stat => {
+      if(stat !== job.stat){
+       return(
+          <option value={stat}>{stat}</option>
+        )
+      }
+    }); 
     return (
       <div className="main-page dashboard">
         <div className="viewjob">
           <div className="content-side clearfix">
             <div className="page-content">
               <div className="container no-padding">
-                <div className="jobs-details">
-                  <div className="jobs-head">
-                    <div className="title">
-                      <h3>Software Engineer</h3>
-                      <span>May 25, 2020</span>
-                    </div>
-                    <div className="state">
-                      <span className="active">active</span>
-                      <div className="more">
-                        <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <img src="/icons/more-vertical.svg" alt="" />
-                        </span>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <button className="dropdown-item" data-toggle="modal" data-target="#editJob">Edit job</button>
-                          <button className="dropdown-item" data-toggle="modal" data-target="#confirmModal">Delete job</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="applicants">
-                    <h5>Number of applicants: <span>205</span></h5>
-                  </div>
-                  <div className="description">
-                    <h4>Description</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                </div>
-                <div className="next-action">
-                  <Link href={"/job-rank/"+this.state.jobID} className="btn btn-bBlue">Close and Start Ranking</Link>
-                </div>
+                {
+                  <Switch>
+                    <Route exact path={this.props.match.path + "/"} 
+                        component={() => <JobDisplay job={job} handleRank={this.handleRank}/>}
+                    />
+                    <Route path={this.props.match.path + "/ranking"} 
+                        component={() => <JobRanked job={job}/>}
+                    />
+                  </Switch>
+                }
               </div>
             </div>
-            {/* End Content */}
           </div>
-          {/* End Right Side */}
         </div>
         <div className="modal fade confirm" id="confirmModal" tabIndex={-1} role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
@@ -73,7 +80,7 @@ export default class ViewJob extends Component {
                 <p>This action will delete this job with all its data</p>
               </div>
               <div className="modal-footer">
-                <a type="button" className="btn btn-delete" href="/job/delete/">Delete</a>
+                <button type="button" className="btn btn-delete"  data-dismiss="modal" onClick={this.handleDelete}>Delete</button>
                 <button type="button" className="btn btn-close" data-dismiss="modal">Cancel</button>
               </div>
             </div>
@@ -94,16 +101,15 @@ export default class ViewJob extends Component {
                     <div className="col-6">
                       <div className="form-group">
                         <label htmlFor="title">Job title</label>
-                        <input type="text" name="title" id="title" className="form-control req-input" defaultValue="Software Engineer" required />
+                        <input type="text" name="title" id="title" className="form-control req-input" value={this.state.job.title} required onChange={this.handleChange}/>
                       </div>
                     </div>
                     <div className="col-6">
                       <div className="form-group">
-                        <label htmlFor="state">Job status</label>
-                        <select className="form-control" name="state" id="state" required>
-                          <option value="active">Active</option>
-                          <option value="hold">Hold</option>
-                          <option value="closed">Closed</option>
+                        <label htmlFor="stat">Job status</label>
+                        <select className="form-control" name="stat" id="stat" required onChange={this.handleChange}>
+                          <option value={this.state.job.stat}>{this.state.job.stat}</option>
+                          {statesOptions}
                         </select>
                       </div>
                     </div>
@@ -112,14 +118,22 @@ export default class ViewJob extends Component {
                     <div className="col-12">
                       <div className="form-group">
                         <label htmlFor="description">Description</label>
-                        <textarea name="description" id="description" rows={8} className="form-control req-input" defaultValue={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n                    "} />
+                        <textarea name="description" id="description" rows={8} className="form-control req-input" value={this.state.job.description} onChange={this.handleChange}/>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="form-group">
+                        <label htmlFor="skills">Skills</label>
+                        <textarea name="skills" id="skills" rows={2} className="form-control req-input" value={this.state.job.skills} onChange={this.handleChange}/>
                       </div>
                     </div>
                   </div>
                 </form>
               </div>
               <div className="modal-footer">
-                <a type="button" className="btn btn-save" href="/job/delete/">Save</a>
+                <button type="button" className="btn btn-save" data-dismiss="modal" onClick={this.handleUpdate}>Save</button>
                 <button type="button" className="btn btn-close" data-dismiss="modal">Cancel</button>
               </div>
             </div>
@@ -129,3 +143,5 @@ export default class ViewJob extends Component {
     )
   }
 }
+
+export default withRouter(ViewJob);

@@ -31,7 +31,6 @@ class AfterLogin extends Component {
             path="/new-workspace" 
             component={() => <NewWorkSpace new_ws={this.handleNewWorkSpace} />}  
           />
-          
         </Switch>
       </div>
     )
