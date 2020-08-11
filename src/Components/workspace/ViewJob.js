@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 
-import {Switch, Route, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 
-import {getJob, deleteJob, updateJob} from "./../../Utils/jobsCalls";
+import {getJob, deleteJob, updateJob, cvsUpload} from "./../../Utils/jobsCalls";
 
 import JobDisplay from './smallComponents/JobDisplay';
 import JobRanked from "./JobRanked";
 
 class ViewJob extends Component {
   state = {
-    job: ''
+    job: '',
+    uploadedFiles: null,
   }
   componentDidMount(){
     getJob(this.props.match.params.jobID)
@@ -36,7 +37,39 @@ class ViewJob extends Component {
     this.setState({job: newJob});
     updateJob(this.state.job)
       .then(data => this.props.history.push(this.props.match.url+'/ranking'));
-  } 
+  }
+  checkMimeType=(event)=>{
+    let files = event.target.files 
+    let err = ''
+    for(var x = 0; x<files.length; x++) {
+      if (files[x].type !== 'application/pdf') {
+        err += files[x].type+' is not a supported format\n';
+      }
+    };
+    if(err) {
+      event.target.value = null
+      console.log(err)
+      return false; 
+    }
+    return true;
+  }
+  handleFileChange = (e) => {
+    if(this.checkMimeType(e)){ 
+      this.setState({
+        uploadedFiles: e.target.files,
+      })
+    }
+  }
+  handleFileUpload = (e) => {
+    const data = new FormData();
+    let uploaded = 0;
+    for(var x = 0; x<this.state.uploadedFiles.length; x++) {
+      data.append('file', this.state.uploadedFiles[x]);
+      uploaded++;
+    }
+    if(cvsUpload(this.state.job._id, data))
+      this.setState({uploaded});
+  }
   render() {
     const job = this.state.job;
     const states = ['active', 'hold'];
@@ -131,9 +164,38 @@ class ViewJob extends Component {
             </div>
           </div>
         </div>
+        <div className="modal fade edit" id="uploadcvs" tabIndex={-1} role="dialog" aria-labelledby="uploadcvsLabel" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h6 className="modal-title" id="uploadcvsLabel">Upload CVS</h6>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <form id="upload-file">
+                  <div className="row">
+                    <div className="offset-4 col-4">
+                      <div className="form-group">
+                        <label htmlFor="file">Choose pdf files to upload</label>
+                        <input type="file" name="file" id="file" accept="application/pdf" className="form-control req-input" multiple required onChange={this.handleFileChange}/>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-save" data-dismiss="modal" onClick={this.handleFileUpload}>Save</button>
+                <button type="button" className="btn btn-close" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
 }
 
 export default withRouter(ViewJob);
+

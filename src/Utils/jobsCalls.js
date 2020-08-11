@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const baseURL = 'http://localhost:3003/api/v1/jobs';
+const uplaodUrl = 'http://localhost:3005/api/v1/';
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3004/api/v1/jobs',
+    baseURL: baseURL,
     withCredentials: true,
 });
 axiosInstance.interceptors.response.use(
@@ -53,4 +55,10 @@ export const updateJob = (jobObj) => {
     return axiosInstance.post('/job',jobObj).then(user => {
         return user.data
     })
+}
+
+export const cvsUpload = (id, data) => {
+    axios.post(uplaodUrl+"/upload/"+id, data, {})
+        .then(result => true)
+        .catch(err => false);
 }

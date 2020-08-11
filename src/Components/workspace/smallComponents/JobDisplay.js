@@ -21,6 +21,7 @@ export default class JobDisplay extends Component {
                       <img src="/icons/more-vertical.svg" alt="" />
                     </span>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <button className="dropdown-item" data-toggle="modal" data-target="#uploadcvs">Upload CVS</button>
                       <button className="dropdown-item" data-toggle="modal" data-target="#editJob">Edit job</button>
                       <button className="dropdown-item" data-toggle="modal" data-target="#confirmModal">Delete job</button>
                     </div>
@@ -44,7 +45,7 @@ export default class JobDisplay extends Component {
         {
           (job.stat !== 'closed')? (
             <div className="next-action">
-              <button button type="button" className="btn btn-bBlue" onClick={this.props.handleRank}>Close and Start Ranking</button>
+              <button type="button" className="btn btn-bBlue" onClick={this.props.handleRank}>Close and Start Ranking</button>
             </div>
           ) : ('')
         }
