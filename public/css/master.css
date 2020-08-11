@@ -1663,6 +1663,12 @@ ul, li {
   margin-bottom: 10px;
   border-bottom: 1px solid #E1E1E1;
 }
+.browse-link a{
+  color: #333;
+}
+.browse-link a:hover{
+  color: #333 !important;
+}
 .class-cvs .classes-cvs-body .cv:last-of-type {
   border: 0;
 }

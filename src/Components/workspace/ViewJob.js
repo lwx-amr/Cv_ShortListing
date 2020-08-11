@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import {withRouter} from "react-router-dom";
 
 import {getJob, deleteJob, updateJob, cvsUpload} from "./../../Utils/jobsCalls";

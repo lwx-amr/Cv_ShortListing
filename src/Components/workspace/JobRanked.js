@@ -28,6 +28,7 @@ export default class JobRanked extends Component {
     const {A : classA = 0, B: classB=0, C: classC=0} = this.state.classesStats;
     const sum = classA + classB + classC;
     const cvsList = (this.state.classCvs.length > 0)? ( this.state.classCvs.map(cv => {
+      let pdfUrl = process.env.REACT_APP_CVS+'/'+this.props.jobID+'/'+cv.path;
       return (
         <div className="cv" key={cv._id}>
           <div className="check-box">
@@ -39,7 +40,7 @@ export default class JobRanked extends Component {
           <div></div>
           <div></div>
           <div className="browse-link">
-            <button type="button" name="button" onClick={() => {this.handleBrowseCV(cv.path)}}><img src="/icons/clipboard 1.png" alt="" /><span> Browse CV</span></button>
+            <a  name="button" target="_blank" rel="noopener noreferrer" href={pdfUrl}><img src="/icons/clipboard 1.png" alt="" /><span> Browse CV</span></a>
           </div>
         </div>       
       )

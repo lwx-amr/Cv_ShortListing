@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const baseURL = 'http://localhost:3003/api/v1/jobs';
-const uplaodUrl = 'http://localhost:3005/api/v1/';
 const axiosInstance = axios.create({
     baseURL: baseURL,
     withCredentials: true,
@@ -58,7 +57,7 @@ export const updateJob = (jobObj) => {
 }
 
 export const cvsUpload = (id, data) => {
-    axios.post(uplaodUrl+"/upload/"+id, data, {})
+    axios.post(process.env.REACT_APP_NLP_MODEL+"/upload/"+id, data, {})
         .then(result => true)
         .catch(err => false);
 }
