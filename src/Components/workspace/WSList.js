@@ -38,7 +38,7 @@ export default class WSList extends Component {
                 <div className="page-content">
                     <div className="page-head">
                         <div className="logo">
-                            <img src="images/blue-logo.svg" alt="" />
+                            <img src="/images/blue-logo.svg" alt="" />
                         </div>
                         <p>Welcome to Rank UP, Here's your workspaces list </p>
                     </div>

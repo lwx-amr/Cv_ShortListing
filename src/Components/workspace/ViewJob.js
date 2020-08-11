@@ -39,11 +39,11 @@ class ViewJob extends Component {
   } 
   render() {
     const job = this.state.job;
-    const states = ['active', 'hold', 'closed'];
+    const states = ['active', 'hold'];
     const statesOptions = states.map(stat => {
       if(stat !== job.stat){
        return(
-          <option value={stat}>{stat}</option>
+          <option value={stat} key={stat}>{stat}</option>
         )
       }
     }); 
@@ -53,16 +53,8 @@ class ViewJob extends Component {
           <div className="content-side clearfix">
             <div className="page-content">
               <div className="container no-padding">
-                {
-                  <Switch>
-                    <Route exact path={this.props.match.path + "/"} 
-                        component={() => <JobDisplay job={job} handleRank={this.handleRank}/>}
-                    />
-                    <Route path={this.props.match.path + "/ranking"} 
-                        component={() => <JobRanked job={job}/>}
-                    />
-                  </Switch>
-                }
+                <JobDisplay job={this.state.job} handleRank={this.handleRank} />
+                {(job.stat === 'closed')? <JobRanked jobID={job._id}/>:''}
               </div>
             </div>
           </div>

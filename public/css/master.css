@@ -1611,6 +1611,11 @@ ul, li {
 .classes-states {
   margin-top: 50px;
 }
+.classes-states .row{
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 10px;
+}
 .classes-states .bars, .classes-states .classes-names, .classes-states .class-annos, .classes-states .class-an {
   display: flex;
   justify-content: space-between;
@@ -1649,6 +1654,7 @@ ul, li {
 .class-cvs .classes-cvs-body {
   padding: 20px 20px 0px;
   max-height: 500px;
+  overflow-y: auto;
 }
 .class-cvs .classes-cvs-body .cv {
   display: flex;
@@ -1672,4 +1678,44 @@ ul, li {
 .class-cvs .classes-cvs-body button img {
   margin-right: 10px;
   padding-bottom: 2px;
+}
+.bars .class-bar {
+  height: 150px;
+  width: 38px;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.bars .class-bar div {
+  width: 100%;
+}
+.bars .classA {
+  background-color: rgba(108, 99, 255, 0.4);
+}
+.bars .classA div {
+  background-color: #6C63FF;
+  height: 0px;
+}
+.bars .classB {
+  background-color: rgba(33, 150, 243, 0.4);
+}
+.bars .classB div {
+  background-color: #2196F3;
+  height: 0px;
+}
+.bars .classC {
+  background-color: rgba(105, 240, 174, 0.4);
+}
+.bars .classC div {
+  background-color: #69F0AE;
+  height: 00px;
+}
+.classes-names div:nth-of-type(3) span{
+  padding-right: 15px;
+}
+.classes-names div:nth-of-type(2) span{
+  padding-left: 3px;
+}
+.classes-names div:nth-of-type(1) span{
+  padding-left: 14px;
 }
