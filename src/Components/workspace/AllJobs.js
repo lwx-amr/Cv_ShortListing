@@ -13,7 +13,7 @@ class AllJobs extends Component {
 			.then(jobs => this.setState({jobs}));
 	}
 	render() {
-		const jobsList = (this.state.jobs.length > 1)? this.state.jobs.map(job => {
+		const jobsList = (this.state.jobs.length > 0)? this.state.jobs.map(job => {
       let date = new Date(Date.parse(job.created_date));
       return (
         <tr key={job._id}>

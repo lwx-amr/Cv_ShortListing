@@ -26,13 +26,26 @@ export default class JobDisplay extends Component {
                       <button className="dropdown-item" data-toggle="modal" data-target="#confirmModal">Delete job</button>
                     </div>
                   </div>
-                ) : ('')
+                ) : (
+                  <div className="more">
+                    <span id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="/icons/more-vertical.svg" alt="" />
+                    </span>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <button className="dropdown-item" data-toggle="modal" data-target="#confirmModal">Delete job</button>
+                    </div>
+                  </div>
+                )
               }
             </div>
           </div>
-          <div className="applicants">
-            <h5>Number of applicants: <span>{job.numOfApplicants}</span></h5>
-          </div>
+          {
+            (job.stat === 'closed') ? (
+              <div className="applicants">
+                <h5>Number of applicants: <span>{job.numOfApplicants}</span></h5>
+              </div>
+            ) : ('')
+          }
           <div className="description">
             <h4>Description</h4>
             <p>{job.description}</p>

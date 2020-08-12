@@ -13,8 +13,8 @@ axiosInstance.interceptors.response.use(
     }
 );
 
-export const getWorkSpaceList = (id) => {
-    return axiosInstance.get('/user/'+id).then(user => {
+export const getWorkSpaceList = (id, email) => {
+    return axiosInstance.get('/user/'+id+'?email='+email).then(user => {
         return user.data
     })
 }
@@ -23,11 +23,12 @@ export const createWorkSpace = (name, emails, ownerID) => {
     return axiosInstance.post('/',{
         name,
         ownerID,
+        emails
     }).then(data => {
-        return true;
+        return data;
     })
     .catch(err => {
-        return false;
+        return null;
     });
 }
 

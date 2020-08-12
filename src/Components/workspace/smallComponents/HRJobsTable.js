@@ -10,10 +10,14 @@ class HRJobsTable extends Component {
   }
   componentDidMount () {
     getHrJobs(this.props.hrID, this.props.wsID)
-      .then(jobs => this.setState({jobs}));
+      .then(jobs => {
+        console.log(jobs);
+        this.setState({jobs})
+      })
+      .catch(err => console.log(err))
   }
   render() {
-    const jobsList = (this.state.jobs.length > 1)? this.state.jobs.map(job => {
+    const jobsList = (this.state.jobs.length > 0)? this.state.jobs.map(job => {
       let date = new Date(Date.parse(job.created_date));
       return (
         <tr key={job._id}>
@@ -28,7 +32,7 @@ class HRJobsTable extends Component {
               <span>{date.getHours() + ':' + date.getMinutes()}</span>
             </div>
           </td>
-          <td>{job.numOfApplicants}</td>
+          <td>{(job.stat === 'closed')?(job.numOfApplicants):('-')}</td>
           <td>
             <div className="state">
               <span className={job.stat}>{job.stat}</span>

@@ -22,7 +22,6 @@ export default class NewWorkSpace extends Component {
         this.setState({
             [e.target.id]: e.target.value
         })
-        console.table(this.state);
     }
     validate = () => {
         let invalid = false

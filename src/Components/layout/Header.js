@@ -14,9 +14,7 @@ export default class Header extends Component {
             <div className="icons">
               <ul className="list-unstyled">
                 <li>
-                  <Link to="#">
-                    <img src="/icons/notifications.svg" alt="" />
-                  </Link>
+                  
                 </li>
               </ul>
             </div>

@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import {withRouter} from "react-router-dom";
 
 import {getJob, deleteJob, updateJob, cvsUpload} from "./../../Utils/jobsCalls";
-
+import { classifyCVs } from "./../../Utils/rankingCalls";
+import {requestReading} from "./../../Utils/nlpModalCalls";
 import JobDisplay from './smallComponents/JobDisplay';
 import JobRanked from "./JobRanked";
 
@@ -10,6 +11,7 @@ class ViewJob extends Component {
   state = {
     job: '',
     uploadedFiles: null,
+    loading: false,
   }
   componentDidMount(){
     getJob(this.props.match.params.jobID)
@@ -30,12 +32,20 @@ class ViewJob extends Component {
     newJob[e.target.id] = e.target.value;
     this.setState({job: newJob});
   }
-  handleRank = async(e) => {
+  handleRank =(e) => {
+    this.setState({loading: true});
     let newJob = this.state.job;
     newJob['stat'] = 'closed';
-    this.setState({job: newJob});
-    updateJob(this.state.job)
-      .then(data => this.props.history.push(this.props.match.url+'/ranking'));
+    updateJob(newJob)
+      .then(job => {
+        requestReading(newJob._id, newJob.skills)
+          .then(() => {
+            classifyCVs(newJob._id)
+              .then(() => {
+                this.props.history.push(this.props.match.url)
+              })
+          })
+      });
   }
   checkMimeType=(event)=>{
     let files = event.target.files 
@@ -86,6 +96,17 @@ class ViewJob extends Component {
             <div className="page-content">
               <div className="container no-padding">
                 <JobDisplay job={this.state.job} handleRank={this.handleRank} />
+                {
+                  (this.state.loading)?(
+                    <div className="loading-cont">
+                      <div className="loading">
+                        <div></div>
+                        <div></div>
+                      </div>  
+                      <p className="text-center">Ranking process is loading, Please wait...</p>
+                    </div>
+                  ) : ('')
+                }
                 {(job.stat === 'closed')? <JobRanked jobID={job._id}/>:''}
               </div>
             </div>

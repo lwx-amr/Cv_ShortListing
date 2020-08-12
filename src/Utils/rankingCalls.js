@@ -13,6 +13,13 @@ axiosInstance.interceptors.response.use(
     }
 );
 
+export const classifyCVs = (id) => {
+    console.log(id);
+    return axiosInstance.get(`/${id}`).then(user => {
+        return user.data
+    })
+}
+
 export const classesWithNum = (id) => {
     return axiosInstance.get(`/${id}/states/`).then(user => {
         return user.data

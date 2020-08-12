@@ -40,7 +40,7 @@ export default class JobRanked extends Component {
           <div></div>
           <div></div>
           <div className="browse-link">
-            <a  name="button" target="_blank" rel="noopener noreferrer" href={pdfUrl}><img src="/icons/clipboard 1.png" alt="" /><span> Browse CV</span></a>
+            <a target="_blank" rel="noopener noreferrer" href={pdfUrl}><img src="/icons/clipboard 1.png" alt="" /><span> Browse CV</span></a>
           </div>
         </div>       
       )
@@ -52,17 +52,17 @@ export default class JobRanked extends Component {
           <div className="classes-states">
             <div className="row">
               <div className="offset-2 col-3">
-                <div class="bars">
-                  <div class="class-bar classA" onClick={() => {this.getClassCVS('A')}}>
-                    <div class="bar" style={{ height: (classA/sum * 100)+'%' }}>
+                <div className="bars">
+                  <div className="class-bar classA" onClick={() => {this.getClassCVS('A')}}>
+                    <div className="bar" style={{ height: (classA/sum * 100)+'%' }}>
                     </div>
                   </div>
-                  <div class="class-bar classB" onClick={() => {this.getClassCVS('B')}}>
-                    <div class="bar" style={{ height: (classB/sum * 100)+'%' }}>
+                  <div className="class-bar classB" onClick={() => {this.getClassCVS('B')}}>
+                    <div className="bar" style={{ height: (classB/sum * 100)+'%' }}>
                     </div>
                   </div>
-                  <div class="class-bar classC" onClick={() => {this.getClassCVS('C')}}>
-                    <div class="bar" style={{ height: (classC/sum * 100)+'%' }}>
+                  <div className="class-bar classC" onClick={() => {this.getClassCVS('C')}}>
+                    <div className="bar" style={{ height: (classC/sum * 100)+'%' }}>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export default class JobRanked extends Component {
             </div>
           </div>
           <div className="next-action">
-            <button button type="button" className="btn btn-bBlue" onClick={this.props.handleRank}>Close and Start Ranking</button>
+            <button type="button" className="btn btn-bBlue" onClick={this.props.handleRank}>Message Selected</button>
           </div>
         </div>
       </div>

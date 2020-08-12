@@ -8,8 +8,9 @@ export default class WSList extends Component {
         wpList:[]
     }
     componentDidMount(){
-        let userID = this.props.match.params.userID;
-        getWorkSpaceList(userID)
+        const userID = this.props.match.params.userID;
+        const userEmail = this.props.userEmail;
+        getWorkSpaceList(userID, userEmail)
             .then(data => {
                 this.setState({
                     wpList: data
